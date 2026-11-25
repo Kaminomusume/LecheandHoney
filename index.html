@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leche & Honey | Plantas Ornamentales, Suministro Mayorista & Paisajismo en Panamá</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="description" content="Vivero botánico en Panamá. Venta de plantas ornamentales aclimatadas, suministro al por mayor para proyectos inmobiliarios, paisajismo y mantenimiento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #183b28;
+      --primary-light: #24553b;
+      --primary-dark: #0f271a;
+      --accent: #d99a38;
+      --accent-hover: #b87f28;
+      --accent-soft: #fcf4e8;
+      --bg: #fbfbf9;
+      --surface: #ffffff;
+      --text: #202621;
+      --text-muted: #647067;
+      --border: #e3e7e4;
+      --shadow-sm: 0 2px 8px rgba(24, 59, 40, 0.05);
+      --shadow-md: 0 8px 24px rgba(24, 59, 40, 0.08);
+      --shadow-lg: 0 16px 40px rgba(24, 59, 40, 0.12);
+      --radius: 14px;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 251, 249, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .brand img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      box-shadow: 0 4px 14px rgba(24, 59, 40, 0.25);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 14px rgba(217, 154, 56, 0.3);
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .cart-nav-btn {
+      position: relative;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      color: var(--primary);
+      padding: 10px 18px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .cart-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .cart-count {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 85px 0 65px;
+      background: radial-gradient(circle at top right, #eef4f0 0%, var(--bg) 60%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--accent-soft);
+      color: var(--accent-hover);
+      border: 1px solid rgba(217, 154, 56, 0.3);
+      border-radius: 99px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.3rem;
+      line-height: 1.15;
+      color: var(--primary-dark);
+      margin-bottom: 22px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+      max-width: 580px;
+    }
+
+    .shipping-alert {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #eef6f1;
+      border: 1px solid #cce3d4;
+      color: var(--primary);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-number {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .trust-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-main {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+
+    .hero-card-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--surface);
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .floating-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 75px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Controls */
+    .catalog-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .catalog-search {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .catalog-search input {
+      width: 100%;
+      padding: 13px 20px 13px 44px;
+      border-radius: 99px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .catalog-search input:focus {
+      border-color: var(--primary);
+    }
+
+    .catalog-search svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .category-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-btn {
+      padding: 8px 18px;
+      border-radius: 99px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-btn.active, .pill-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Plant Grid */
+    .plant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .plant-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plant-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      height: 240px;
+      background: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .plant-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-price {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 3px;
+    }
+
+    .card-scientific {
+      font-style: italic;
+      font-size: 0.86rem;
+      color: var(--accent-hover);
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .card-shipping-tag {
+      font-size: 0.78rem;
+      color: #3b6b4e;
+      background: #f0f7f2;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .card-actions .btn {
+      padding: 9px 12px;
+      font-size: 0.82rem;
+      border-radius: 8px;
+    }
+
+    /* B2B Section */
+    .b2b-section {
+      background: #142e20;
+      color: #fff;
+      border-radius: 24px;
+      padding: 65px 45px;
+      margin: 35px 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .b2b-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .b2b-content h2 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    .b2b-content h2 span {
+      color: var(--accent);
+    }
+
+    .b2b-content p {
+      color: #b9cfc1;
+      font-size: 1.02rem;
+      margin-bottom: 24px;
+    }
+
+    .b2b-benefits {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .b2b-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #e3ede6;
+    }
+
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .b2b-form-card {
+      background: #ffffff;
+      color: var(--text);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .b2b-form-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .b2b-form-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary-dark);
+    }
+
+    .form-group select, .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      padding: 32px 26px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Modal Ficha */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      max-width: 650px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      font-size: 1.2rem;
+      z-index: 10;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-img {
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* SIDEBAR / CART DRAWER */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1100;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -460px;
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: var(--surface);
+      z-index: 1200;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fafaf8;
+    }
+
+    .cart-header h3 {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-empty-msg {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .cart-item-info h4 {
+      font-size: 0.92rem;
+      color: var(--primary-dark);
+      margin-bottom: 3px;
+    }
+
+    .cart-item-price {
+      font-size: 0.86rem;
+      color: var(--accent-hover);
+      font-weight: 700;
+    }
+
+    .cart-qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .qty-btn:hover {
+      background: var(--border);
+    }
+
+    .cart-item-del {
+      background: transparent;
+      border: none;
+      color: #e04b4b;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 4px;
+    }
+
+    .cart-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      background: #fafaf8;
+    }
+
+    .cart-delivery-note {
+      background: #eef6f1;
+      border: 1px solid #c7e5d2;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #215c38;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: #ff3b30;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 55px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 35px;
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: #a4b8ab;
+      font-size: 0.92rem;
+      max-width: 360px;
+    }
+
+    .footer-col h5 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-col a {
+      color: #a4b8ab;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 22px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7b9483;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .b2b-grid, .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-gallery {
+        order: -1;
+      }
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-img {
+        height: 200px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .cart-drawer {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <img src="assets/logo.png" alt="Leche & Honey" onerror="this.style.display='none'">
+        <span>Leche & Honey</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#catalogo">Catálogo de Plantas</a></li>
+        <li><a href="#b2b">Suministro B2B / Lotes</a></li>
+        <li><a href="#servicios">Servicios & Paisajismo</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="cart-nav-btn" onclick="toggleCart()" title="Ver carrito de compras">
+          🛒 Pedido <span class="cart-count" id="cartCountBadge">0</span>
+        </button>
+        <a href="https://wa.me/50768118430?text=Hola%20Leche%20%26%20Honey,%20deseo%20hacer%20una%20consulta%20sobre%20plantas." target="_blank" class="btn btn-accent">
+          💬 Pedir Asesoría
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">🌿 Vivero Botánico & Paisajismo en Panamá</div>
+        <h1 class="hero-title">
+          Plantas Tropicales de Alta Calidad & <span>Paisajismo de Autor</span>
+        </h1>
+        <p class="hero-description">
+          Suministro directo de vivero para hogares, oficinas y proyectos corporativos. Especies 100% aclimatadas al clima de Panamá, disponibles al detal y en lotes mayoristas.
+        </p>
+
+        <div class="shipping-alert">
+          🚚 <span><strong>Envíos a domicilio:</strong> El costo de envío se cotiza según tu dirección exacta y volumen del pedido.</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary">
+            🌱 Explorar Catálogo y Precios
+          </a>
+          <a href="#b2b" class="btn btn-outline">
+            🏢 Cotización Mayorista B2B
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-number">+16</span>
+            <span class="trust-label">Especies Aclimatadas</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">Directo</span>
+            <span class="trust-label">Precio de Productor</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">Cobertura</span>
+            <span class="trust-label">Panamá Oeste, Ciudad & Colón</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-gallery">
+        <div class="hero-card-main">
+          <img src="assets/areca.jpg" alt="Palma Areca Leche & Honey">
+        </div>
+        <div class="hero-floating-card">
+          <div class="floating-icon">🌴</div>
+          <div>
+            <h4 style="font-size: 0.95rem; font-weight: 700;">Palma Areca en Lotes</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Especial para áreas comunes y PH</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de Plantas -->
+  <section id="catalogo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Colección Botánica</span>
+        <h2 class="section-title">Nuestras Plantas & Precios</h2>
+        <p class="section-desc">Agrega tus plantas al carrito de compras. Al confirmar, tu pedido se enviará ordenado por WhatsApp calculando el envío según tu dirección.</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="catalog-controls">
+        <div class="catalog-search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico (ej. Monstera, Areca, Sansevieria)...">
+        </div>
+
+        <div class="category-pills">
+          <button class="pill-btn active" data-filter="all">Todas</button>
+          <button class="pill-btn" data-filter="sombra">Interiores & Sombra</button>
+          <button class="pill-btn" data-filter="sol">Sol & Exterior</button>
+          <button class="pill-btn" data-filter="palmas">Palmas Tropicales</button>
+          <button class="pill-btn" data-filter="suculentas">Suculentas & Esculturales</button>
+        </div>
+      </div>
+
+      <!-- Plant Cards Container -->
+      <div class="plant-grid" id="plantGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B & Wholesale Section -->
+  <section id="b2b" class="container">
+    <div class="b2b-section">
+      <div class="b2b-grid">
+        <div class="b2b-content">
+          <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">División Corporativa & Proyectos</span>
+          <h2>Proveedores al por mayor para <span>Paisajismo & Inmobiliarias</span></h2>
+          <p>
+            Atendemos directamente a promotoras residenciales, cadenas hoteleras, administradores de PH y despachos de arquitectura en Panamá Oeste, Ciudad de Panamá y Colón.
+          </p>
+
+          <ul class="b2b-benefits">
+            <li><span class="check-icon">✓</span> Suministro por lote de Palma Areca, Sansevieria y Dieffenbachia.</li>
+            <li><span class="check-icon">✓</span> Aclimatación local garantizada con tasa de merma mínima.</li>
+            <li><span class="check-icon">✓</span> Opciones con macetería de concreto, fibra o barro a medida.</li>
+            <li><span class="check-icon">✓</span> Planes de reposición periódica y mantenimiento fitosanitario.</li>
+          </ul>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="https://wa.me/50768118430?text=Hola,%20solicito%20cotización%20B2B%20por%20lote%20para%20un%20proyecto." target="_blank" class="btn btn-accent">
+              📋 Cotizar Proyecto Inmobiliario
+            </a>
+          </div>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="b2b-form-card">
+          <h3>Calculadora Rápida de Lotes</h3>
+          <p>Estima tu requerimiento para proyectos comerciales:</p>
+
+          <div class="form-group">
+            <label for="b2bPlant">Especie Requerida</label>
+            <select id="b2bPlant">
+              <option value="Palma Areca (Dypsis lutescens)">Palma Areca (Dypsis lutescens)</option>
+              <option value="Palma Roja (Cyrtostachys renda)">Palma Roja (Cyrtostachys renda)</option>
+              <option value="Dieffenbachia Amoena (Millonaria)">Dieffenbachia Amoena (Millonaria)</option>
+              <option value="Sansevieria / Espada San Jorge">Sansevieria (Espada San Jorge)</option>
+              <option value="Monstera Lechleriana">Monstera Lechleriana</option>
+              <option value="Lote Mixto de Sombra">Lote Mixto de Sombra para Interior</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="b2bQty">Cantidad Estimada (Plantas)</label>
+            <select id="b2bQty">
+              <option value="25 a 50 unidades">25 a 50 unidades (Lote Inicial)</option>
+              <option value="50 a 100 unidades">50 a 100 unidades (Proyecto Mediano)</option>
+              <option value="100 a 500+ unidades">100 a 500+ unidades (Gran Desarrollo / PH)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="b2bLoc">Zona de Entrega</label>
+            <select id="b2bLoc">
+              <option value="Panamá Oeste (Costa Verde / Arraiján / Chorrera)">Panamá Oeste (Costa Verde / Arraiján / Chorrera)</option>
+              <option value="Ciudad de Panamá (Costa del Este / Santa María / Obarrio)">Ciudad de Panamá (Costa del Este / Santa María / Obarrio)</option>
+              <option value="Colón / Zona Libre / Coco Solo">Colón / Zona Libre / Coco Solo</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="enviarCotizacionB2B()">
+            📲 Solicitar Cotización Formal por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Soluciones Integrales</span>
+        <h2 class="section-title">Servicios de Paisajismo & Vivero</h2>
+        <p class="section-desc">Cubrimos desde el suministro unitario hasta la ejecución completa de áreas verdes.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3>Suministro Mayorista</h3>
+          <p>Abastecimiento continuo a viveros, paisajistas y administraciones inmobiliarias con precios de mayoreo altamente competitivos.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Diseño de Paisajismo</h3>
+          <p>Asesoramiento en selección botánica adecuada según horas de luz, brisa marina y humedad para garantizar áreas verdes duraderas.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🪴</div>
+          <h3>Macetería & Montaje</h3>
+          <p>Instalación llave en mano con macetas modernas seleccionadas, sustratos enriquecidos y abonos orgánicos de liberación lenta.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Mantenimiento & Sanidad</h3>
+          <p>Pólizas periódicas de poda, fertilización, control fitosanitario y reposición de plantas para lobbies, restaurantes y oficinas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Ficha Técnica -->
+  <div class="modal-overlay" id="plantModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-grid">
+        <img src="" id="modalImg" class="modal-img" alt="Planta">
+        <div class="modal-body">
+          <div>
+            <span id="modalCategory" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--accent);"></span>
+            <h3 id="modalTitle" style="font-size: 1.4rem; margin: 4px 0; color: var(--primary-dark);"></h3>
+            <p id="modalScientific" style="font-style: italic; color: var(--text-muted); margin-bottom: 12px; font-size: 0.88rem;"></p>
+            <p id="modalDesc" style="font-size: 0.88rem; color: var(--text); line-height: 1.55; margin-bottom: 14px;"></p>
+            
+            <div style="background: var(--bg); padding: 12px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 14px;">
+              <strong>Guía de cuidados:</strong>
+              <div id="modalCare" style="color: var(--text-muted); margin-top: 4px;"></div>
+            </div>
+            
+            <div style="font-size: 0.8rem; color: #2e6344; background: #eef7f1; padding: 6px 10px; border-radius: 6px; margin-bottom: 14px;">
+              🚚 Costo de envío según dirección y distancia.
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div id="modalPrice" style="font-size: 1.35rem; font-weight: 700; color: var(--primary);"></div>
+            <button id="modalAddCartBtn" class="btn btn-accent" style="padding: 10px 16px;">
+              🛒 Añadir al Pedido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER / OFF-CANVAS -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 Tu Lista de Pedido</h3>
+      <button class="cart-close-btn" onclick="toggleCart()">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItemsList">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-delivery-note">
+        <span>🚚</span>
+        <div><strong>Costo de envío según dirección:</strong> Te confirmaremos el valor exacto del flete al recibir tu ubicación.</div>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 10px;">
+        <label for="customerName" style="font-size: 0.8rem;">Tu Nombre:</label>
+        <input type="text" id="customerName" placeholder="Ej. Ana Morales" style="padding: 8px 10px; font-size: 0.88rem;">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label for="customerAddress" style="font-size: 0.8rem;">Dirección o Zona de Entrega:</label>
+        <input type="text" id="customerAddress" placeholder="Ej. Costa Verde, La Chorrera o San Francisco" style="padding: 8px 10px; font-size: 0.88rem;">
+      </div>
+
+      <div class="cart-summary-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">$0.00 USD</span>
+      </div>
+
+      <button class="btn btn-accent" style="width: 100%; font-size: 0.95rem;" onclick="finalizarPedidoWhatsApp()">
+        📲 Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/50768118430?text=Hola%20Leche%20%26%20Honey,%20tengo%20una%20consulta." target="_blank" class="whatsapp-float" title="Contactar Asesor">
+    <span class="whatsapp-badge">1</span>
+    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.18-.544-1.782-.738-2.922-2.55-3.011-2.668-.088-.119-.724-.962-.724-1.834 0-.872.457-1.302.62-1.479.163-.177.355-.221.474-.221.119 0 .237.001.341.006.11.005.258-.042.403.308.148.358.508 1.238.552 1.328.044.09.074.195.015.313-.059.12-.089.195-.178.299-.089.105-.187.234-.267.314-.089.09-.182.188-.078.367.104.179.462.763.992 1.234.683.608 1.258.796 1.437.886.179.089.283.075.388-.045.104-.119.444-.518.563-.697.119-.179.237-.149.399-.089.162.06 1.031.486 1.208.575.177.089.296.134.34.208.044.075.044.433-.1 1.038z"/></svg>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="assets/logo.png" alt="Leche & Honey" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent);">
+          <h4 style="margin: 0;">Leche & Honey</h4>
+        </div>
+        <p>Vivero tropical, plantas ornamentales de bajo mantenimiento y soluciones paisajísticas integrales en Panamá.</p>
+        <p style="margin-top: 12px; color: var(--accent);">📍 Cultivo local en Panamá</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#catalogo">Catálogo Completo</a></li>
+          <li><a href="#b2b">Suministro B2B & Proyectos</a></li>
+          <li><a href="#servicios">Servicios de Paisajismo</a></li>
+          <li><a href="javascript:void(0)" onclick="toggleCart()">Ver Mi Pedido</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Atención & Pedidos</h5>
+        <ul>
+          <li>Atención directa vía WhatsApp</li>
+          <li>Envíos: Panamá Oeste, Ciudad y Colón</li>
+          <li>Costo de envío según dirección</li>
+          <li>Lunes a Sábado: 8:00 AM - 5:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      &copy; 2026 Leche & Honey Panamá. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const PHONE_NUMBER = "50768118430";
+
+    const plantsData = [
+      {
+        id: "areca",
+        name: "Palma Areca (Frutos de Oro)",
+        scientific: "Dypsis lutescens",
+        category: "palmas",
+        categoryName: "Palma de Gran Porte",
+        price: 7,
+        image: "assets/areca.jpg",
+        light: "Semisombra / Luz brillante",
+        water: "Riego moderado 2-3 veces/semana",
+        desc: "Palma tropical clásica y elegante. Excelente para delimitar espacios, terrazas, lobbies y jardines residenciales.",
+        care: "Prefiere sustratos bien drenados y luz indirecta brillante. Tolera semisombra en interiores iluminados."
+      },
+      {
+        id: "palma_roja",
+        name: "Palma Roja (Palma Labial)",
+        scientific: "Cyrtostachys renda",
+        category: "palmas",
+        categoryName: "Palma Exclusiva",
+        price: 20,
+        image: "assets/palma_roja.jpg",
+        light: "Sol moderado / Semisombra",
+        water: "Riego frecuente, alta humedad",
+        desc: "Joya botánica de tallos rojos vibrantes. El punto focal por excelencia para residencias de alto nivel y accesos arquitectónicos.",
+        care: "Requiere humedad ambiental constante y suelo húmedo pero con buen drenaje. Proteger de vientos secos."
+      },
+      {
+        id: "difenbachia",
+        name: "Millonaria (Dieffenbachia Amoena)",
+        scientific: "Dieffenbachia amoena",
+        category: "sombra",
+        categoryName: "Interior & Sombra",
+        price: 5,
+        image: "assets/difenbachia.jpg",
+        light: "Sombra / Luz filtrada",
+        water: "1-2 veces por semana",
+        desc: "Follaje variegado exuberante en verde y marfil. Aporta luminosidad inmediata a salas, pasillos y oficinas.",
+        care: "Evitar el encharcamiento; limpiar el polvo de las hojas periódicamente con un paño húmedo."
+      },
+      {
+        id: "sansevieria",
+        name: "Sansevieria (Espada San Jorge)",
+        scientific: "Dracaena trifasciata",
+        category: "suculentas",
+        categoryName: "Arquitectónica & Resistente",
+        price: 4,
+        image: "assets/sansevieria.jpg",
+        light: "Sombra a Pleno Sol",
+        water: "Riego espaciado cada 10-15 días",
+        desc: "Prácticamente indestructible y gran purificadora de aire. De porte vertical escultórico, perfecta para macetas modernas.",
+        care: "Tolera descuidos de riego. Regar solo cuando la tierra esté completamente seca."
+      },
+      {
+        id: "monstera",
+        name: "Monstera Lechleriana",
+        scientific: "Monstera lechleriana",
+        category: "sombra",
+        categoryName: "Trepadora de Sombra",
+        price: 4,
+        image: "assets/monstera.jpg",
+        light: "Luz indirecta / Semisombra",
+        water: "Riego regular cuando seque el sustrato",
+        desc: "Hermosa arácea trepadora de hojas verdes profundas con fenestraciones (agujeros) naturales a lo largo de la nervadura.",
+        care: "Ideal con tutor de musgo o madera para promover hojas más grandes."
+      },
+      {
+        id: "sabila",
+        name: "Sábila (Aloe Vera)",
+        scientific: "Aloe barbadensis Miller",
+        category: "suculentas",
+        categoryName: "Suculenta Medicinal",
+        price: 5,
+        image: "assets/sabila.jpg",
+        light: "Pleno Sol / Muy iluminado",
+        water: "Riego escaso cada 10 días",
+        desc: "Planta medicinal y decorativa de bajísimo mantenimiento. Aporta un diseño limpio y propiedades cicatrizantes naturales.",
+        care: "Requiere maceta con drenaje rápido y suelo arenoso."
+      },
+      {
+        id: "golden_pothos",
+        name: "Pothos Dorado",
+        scientific: "Epipremnum aureum",
+        category: "sombra",
+        categoryName: "Colgante de Interior",
+        price: 4,
+        image: "assets/golden_pothos.jpg",
+        light: "Semisombra / Luz indirecta",
+        water: "Riego semanal moderado",
+        desc: "Enredadera vivaz de hojas acorazonadas con vetas amarillas doradas. Ideal para repisas, macetas colgantes y escritorios.",
+        care: "Muy versátil y de rápido crecimiento en climas cálidos."
+      },
+      {
+        id: "helecho",
+        name: "Helecho Tropical",
+        scientific: "Nephrolepis exaltata",
+        category: "sombra",
+        categoryName: "Follaje Colgante",
+        price: 4,
+        image: "assets/helecho.jpg",
+        light: "Sombra fresca / Luz difusa",
+        water: "Riego frecuente, mantener humedad",
+        desc: "Frondas arqueadas finas de verde radiante. Transmite frescura silvestre y elegancia en balcones y terrazas protegidas.",
+        care: "Pulverizar las hojas con agua sin cloro en días secos."
+      },
+      {
+        id: "fairy_castle",
+        name: "Cactus Castillo de Hadas",
+        scientific: "Acanthocereus tetragonus",
+        category: "suculentas",
+        categoryName: "Cactus Escultórico",
+        price: 5,
+        image: "assets/fairy_castle.jpg",
+        light: "Pleno Sol / Luz solar directa",
+        water: "Riego mínimo cada 15-20 días",
+        desc: "Cactus de tallos prismáticos que forman torrecillas semejantes a un castillo de fantasía. Una pieza decorativa única.",
+        care: "No sobre-regar en ninguna circunstancia; necesita sol directo."
+      },
+      {
+        id: "magueyito",
+        name: "Magueyito (Barquito)",
+        scientific: "Tradescantia spathacea",
+        category: "sol",
+        categoryName: "Cubresuelos & Acento",
+        price: 3,
+        image: "assets/magueyito.jpg",
+        light: "Sol o Semisombra",
+        water: "Riego moderado",
+        desc: "Hojas lanceoladas verdes en el haz y violeta brillante en el envés. Excelente para crear contrastes de color en canteros.",
+        care: "Resistente a la intemperie y de rápida propagación en exteriores."
+      },
+      {
+        id: "maguey",
+        name: "Maguey de Sisal",
+        scientific: "Agave sisalana",
+        category: "sol",
+        categoryName: "Agave Estructural",
+        price: 5,
+        image: "assets/maguey.jpg",
+        light: "Pleno Sol",
+        water: "Riego escaso",
+        desc: "Agave ornamental de porte sobrio y simétrico. Sobresaliente resistencia a sequías y condiciones de brisa marina.",
+        care: "Planta ideal para jardinería de bajo consumo hídrico."
+      },
+      {
+        id: "higuera",
+        name: "Higuera de Fruto",
+        scientific: "Ficus carica",
+        category: "sol",
+        categoryName: "Árbol Frutal / Exterior",
+        price: 10,
+        image: "assets/higuera.jpg",
+        light: "Pleno Sol",
+        water: "Riego regular",
+        desc: "Planta frutal mediterránea adaptada al clima cálido. Hojas lobuladas y producción de deliciosos higos dulces.",
+        care: "Prefiere macetón grande o siembra en tierra con buena exposición solar."
+      },
+      {
+        id: "ayer_hoy_manana",
+        name: "Ayer, Hoy y Mañana",
+        scientific: "Brunfelsia pauciflora",
+        category: "sol",
+        categoryName: "Arbusto Floral Aromático",
+        price: 4,
+        image: "assets/ayer_hoy_manana.jpg",
+        light: "Sol suave matutino / Semisombra",
+        water: "Riego regular manteniendo suelo fresco",
+        desc: "Fascinante arbusto cuyas flores cambian de violeta intenso a lavanda y blanco a lo largo de 3 días con fragancia embriagadora.",
+        care: "Florece abundantemente con abono orgánico cada temporada."
+      },
+      {
+        id: "azalea",
+        name: "Azalea Tropical",
+        scientific: "Rhododendron simsii",
+        category: "sol",
+        categoryName: "Floración Ornamental",
+        price: 5,
+        image: "assets/azalea.jpg",
+        light: "Luz brillante sin sol de mediodía",
+        water: "Suelo siempre fresco",
+        desc: "Arbusto compacto cargado de flores vibrantes. Llena de vida y color jardineras residenciales y porches.",
+        care: "Prefiere sustratos ligeramente ácidos y riego con agua fresca."
+      }
+    ];
+
+    // State: Cart
+    let cart = [];
+
+    function addToCart(plantId) {
+      const plant = plantsData.find(p => p.id === plantId);
+      if (!plant) return;
+
+      const existing = cart.find(item => item.id === plantId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...plant, qty: 1 });
+      }
+
+      updateCartUI();
+      openCart();
+    }
+
+    function changeQty(plantId, delta) {
+      const item = cart.find(i => i.id === plantId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== plantId);
+      }
+      updateCartUI();
+    }
+
+    function removeFromCart(plantId) {
+      cart = cart.filter(i => i.id !== plantId);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartCountBadge');
+      const itemsList = document.getElementById('cartItemsList');
+      const subtotalEl = document.getElementById('cartSubtotal');
+
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      badge.textContent = totalCount;
+
+      if (cart.length === 0) {
+        itemsList.innerHTML = `<div class="cart-empty-msg">Tu carrito de pedido está vacío.<br>Elige tus plantas en el catálogo.</div>`;
+        subtotalEl.textContent = "$0.00 USD";
+        return;
+      }
+
+      let subtotal = 0;
+      itemsList.innerHTML = cart.map(item => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+            <div class="cart-item-info">
+              <h4>${item.name}</h4>
+              <div class="cart-item-price">$${item.price} c/u &bull; Total: $${itemTotal}</div>
+              <div class="cart-qty-ctrl">
+                <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                <span style="font-weight: 700; font-size: 0.85rem; min-width: 18px; text-align: center;">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+              </div>
+            </div>
+            <button class="cart-item-del" onclick="removeFromCart('${item.id}')" title="Eliminar">🗑️</button>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.textContent = `$${subtotal.toFixed(2)} USD`;
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartOverlay');
+      if (drawer.classList.contains('open')) {
+        closeCart();
+      } else {
+        openCart();
+      }
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').style.display = 'block';
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').style.display = 'none';
+    }
+
+    function finalizarPedidoWhatsApp() {
+      if (cart.length === 0) {
+        alert("Por favor agrega al menos una planta a tu pedido.");
+        return;
+      }
+
+      const name = document.getElementById('customerName').value.trim() || "Cliente";
+      const address = document.getElementById('customerAddress').value.trim() || "A coordinar según dirección";
+
+      let subtotal = 0;
+      let itemsText = "";
+      cart.forEach(item => {
+        const total = item.price * item.qty;
+        subtotal += total;
+        itemsText += `• ${item.qty}x ${item.name} ($${total} USD)%0A`;
+      });
+
+      const message = `*NUEVO PEDIDO - LECHE %26 HONEY*%0A%0A` +
+                      `👤 *Cliente:* ${name}%0A` +
+                      `📍 *Dirección de Entrega:* ${address}%0A` +
+                      `🚚 *Envío:* Costo a cotizar según dirección exacta%0A%0A` +
+                      `🌿 *Detalle del Pedido:*%0A${itemsText}%0A` +
+                      `💰 *Subtotal de Plantas:* $${subtotal.toFixed(2)} USD%0A%0A` +
+                      `Por favor confírmenme disponibilidad y el costo de envío a mi dirección.`;
+
+      window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
+    }
+
+    // Render Plants
+    const plantGrid = document.getElementById('plantGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.pill-btn');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderPlants() {
+      const filtered = plantsData.filter(plant => {
+        const matchesCategory = currentFilter === 'all' || plant.category === currentFilter;
+        const matchesSearch = plant.name.toLowerCase().includes(currentSearch.toLowerCase()) || 
+                              plant.scientific.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        plantGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+            <p style="font-size: 1.2rem; color: var(--text-muted);">No encontramos plantas que coincidan con tu búsqueda.</p>
+          </div>
+        `;
+        return;
+      }
+
+      plantGrid.innerHTML = filtered.map(plant => `
+        <div class="plant-card">
+          <div class="card-img-wrap" onclick="openModal('${plant.id}')" style="cursor: pointer;">
+            <img src="${plant.image}" alt="${plant.name}" loading="lazy">
+            <span class="card-badge">${plant.categoryName}</span>
+            <span class="card-price">$${plant.price}</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">${plant.name}</h3>
+            <div class="card-scientific">${plant.scientific}</div>
+            <p class="card-desc">${plant.desc}</p>
+            <div class="card-shipping-tag">🚚 Envío según dirección</div>
+            <div class="card-actions">
+              <button class="btn btn-outline" onclick="openModal('${plant.id}')">Ver Ficha</button>
+              <button class="btn btn-accent" onclick="addToCart('${plant.id}')">🛒 Añadir</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Listeners
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderPlants();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderPlants();
+    });
+
+    // Modal Functions
+    const modal = document.getElementById('plantModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalScientific = document.getElementById('modalScientific');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalCare = document.getElementById('modalCare');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalAddCartBtn = document.getElementById('modalAddCartBtn');
+
+    function openModal(plantId) {
+      const plant = plantsData.find(p => p.id === plantId);
+      if (!plant) return;
+
+      modalImg.src = plant.image;
+      modalCategory.textContent = plant.categoryName;
+      modalTitle.textContent = plant.name;
+      modalScientific.textContent = plant.scientific;
+      modalDesc.textContent = plant.desc;
+      modalCare.innerHTML = `☀️ <strong>Luz:</strong> ${plant.light}<br>💧 <strong>Riego:</strong> ${plant.water}<br>🌱 <strong>Cuidado:</strong> ${plant.care}`;
+      modalPrice.textContent = `$${plant.price} USD`;
+      
+      modalAddCartBtn.onclick = () => {
+        addToCart(plant.id);
+        closeModal();
+      };
+
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // B2B Quote to WhatsApp
+    function enviarCotizacionB2B() {
+      const plant = document.getElementById('b2bPlant').value;
+      const qty = document.getElementById('b2bQty').value;
+      const loc = document.getElementById('b2bLoc').value;
+
+      const message = `*SOLICITUD DE COTIZACIÓN B2B - LECHE %26 HONEY*%0A%0A` +
+                      `🌿 *Especie:* ${plant}%0A` +
+                      `📦 *Cantidad aproximada:* ${qty}%0A` +
+                      `📍 *Zona de entrega:* ${loc}%0A` +
+                      `🚚 *Nota:* Flete a cotizar según ubicación%0A%0A` +
+                      `Deseo recibir una propuesta formal de suministro para mi proyecto.`;
+
+      window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
+    }
+
+    // Initial render
+    renderPlants();
+    updateCartUI();
+  </script>
+</body>
+</html>
