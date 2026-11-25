@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leche & Honey | Plantas Ornamentales, Suministro Mayorista & Paisajismo en Panamá</title>
+  <title>Leche & Honey | Plantas Tropicales, Arreglos Vivos & Paisajismo en Panamá</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <meta name="description" content="Vivero botánico en Panamá. Venta de plantas ornamentales aclimatadas, suministro al por mayor para proyectos inmobiliarios, paisajismo y mantenimiento.">
+  <meta name="description" content="Vivero botánico en Panamá. Catálogo de plantas ornamentales aclimatadas, creador de arreglos vivos personalizados, macetería y suministro mayorista para proyectos en Panamá Oeste, Ciudad y Colón.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(251, 251, 249, 0.95);
+      background: rgba(251, 251, 249, 0.96);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -101,13 +101,13 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
       list-style: none;
     }
 
     .nav-links a {
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text);
       transition: color 0.2s;
     }
@@ -119,7 +119,7 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .btn {
@@ -130,7 +130,7 @@
       padding: 12px 24px;
       border-radius: 99px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       cursor: pointer;
       transition: all 0.2s ease;
       border: none;
@@ -175,7 +175,7 @@
       padding: 10px 18px;
       border-radius: 99px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -234,10 +234,10 @@
 
     .hero-title {
       font-family: var(--font-heading);
-      font-size: 3.3rem;
+      font-size: 3.2rem;
       line-height: 1.15;
       color: var(--primary-dark);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .hero-title span {
@@ -246,9 +246,9 @@
     }
 
     .hero-description {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: var(--text-muted);
-      margin-bottom: 34px;
+      margin-bottom: 26px;
       max-width: 580px;
     }
 
@@ -269,8 +269,8 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 14px;
+      margin-bottom: 34px;
     }
 
     .hero-trust {
@@ -312,10 +312,10 @@
 
     .hero-floating-card {
       position: absolute;
-      bottom: -20px;
-      left: -20px;
+      bottom: -18px;
+      left: -18px;
       background: var(--surface);
-      padding: 16px 20px;
+      padding: 14px 18px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border);
@@ -343,7 +343,7 @@
 
     .section-header {
       text-align: center;
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto 45px;
     }
 
@@ -473,6 +473,22 @@
       transform: scale(1.04);
     }
 
+    .photo-indicator {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     .card-badge {
       position: absolute;
       top: 12px;
@@ -524,8 +540,19 @@
     .card-desc {
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       flex-grow: 1;
+    }
+
+    .card-varieties-tag {
+      font-size: 0.78rem;
+      background: var(--bg);
+      border: 1px dashed var(--border);
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: inline-block;
     }
 
     .card-shipping-tag {
@@ -548,6 +575,210 @@
       padding: 9px 12px;
       font-size: 0.82rem;
       border-radius: 8px;
+    }
+
+    /* ========================================================
+       SECCIÓN: CREADOR DE ARREGLOS VIVOS Y JARDINERAS
+       ======================================================== */
+    .arrangements-section {
+      background: #f4f7f5;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 85px 0;
+    }
+
+    .builder-card {
+      background: var(--surface);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .builder-main {
+      padding: 40px;
+    }
+
+    .builder-sidebar {
+      background: #142e20;
+      color: #fff;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .builder-step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pot Selector Options */
+    .pot-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .pot-option {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--bg);
+    }
+
+    .pot-option:hover {
+      border-color: var(--accent);
+    }
+
+    .pot-option.selected {
+      border-color: var(--primary);
+      background: #eef6f1;
+    }
+
+    .pot-option-icon {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+
+    .pot-option-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .pot-option-price {
+      font-size: 0.76rem;
+      color: var(--accent-hover);
+      font-weight: 600;
+    }
+
+    /* Plant Checkbox Grid */
+    .mix-plant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .mix-plant-item {
+      position: relative;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mix-plant-item:hover {
+      border-color: var(--accent);
+    }
+
+    .mix-plant-item.checked {
+      border-color: var(--primary);
+      background: #eef6f1;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .mix-plant-thumb {
+      width: 100%;
+      height: 75px;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-bottom: 6px;
+    }
+
+    .mix-plant-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .mix-plant-price {
+      font-size: 0.75rem;
+      color: var(--accent-hover);
+      font-weight: 700;
+    }
+
+    /* Topping Finishes */
+    .finish-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .finish-pill {
+      padding: 8px 14px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .finish-pill.selected {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Live Summary Box */
+    .summary-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      color: #d1e2d7;
+    }
+
+    .summary-total {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 12px;
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
     }
 
     /* B2B Section */
@@ -706,7 +937,7 @@
       line-height: 1.55;
     }
 
-    /* Modal Ficha */
+    /* Modal Ficha con Galería */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -722,7 +953,7 @@
     .modal-content {
       background: var(--surface);
       border-radius: var(--radius);
-      max-width: 650px;
+      max-width: 780px;
       width: 100%;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
@@ -752,17 +983,59 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    .modal-img {
+    .modal-gallery-wrap {
+      display: flex;
+      flex-direction: column;
+      background: #111;
+    }
+
+    .modal-main-img-box {
+      height: 340px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a1a;
+    }
+
+    .modal-main-img-box img {
+      width: 100%;
       height: 100%;
-      min-height: 320px;
       object-fit: cover;
     }
 
+    .modal-thumbs-row {
+      display: flex;
+      gap: 8px;
+      padding: 10px;
+      background: #222;
+      overflow-x: auto;
+    }
+
+    .modal-thumb {
+      width: 55px;
+      height: 55px;
+      border-radius: 6px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.6;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .modal-thumb.active, .modal-thumb:hover {
+      opacity: 1;
+      border-color: var(--accent);
+    }
+
     .modal-body {
-      padding: 26px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      overflow-y: auto;
+      max-height: 480px;
     }
 
     /* SIDEBAR / CART DRAWER */
@@ -912,7 +1185,7 @@
       padding: 10px 12px;
       font-size: 0.8rem;
       color: #215c38;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: flex;
       align-items: flex-start;
       gap: 8px;
@@ -985,7 +1258,6 @@
       font-family: var(--font-heading);
       font-size: 1.6rem;
       color: var(--accent);
-      margin-bottom: 10px;
     }
 
     .footer-brand p {
@@ -1026,12 +1298,12 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .b2b-grid, .footer-grid {
+      .hero-grid, .b2b-grid, .footer-grid, .builder-card {
         grid-template-columns: 1fr;
         gap: 36px;
       }
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
       }
       .hero-gallery {
         order: -1;
@@ -1039,8 +1311,8 @@
       .modal-grid {
         grid-template-columns: 1fr;
       }
-      .modal-img {
-        height: 200px;
+      .modal-main-img-box {
+        height: 240px;
       }
       .nav-links {
         display: none;
@@ -1057,12 +1329,13 @@
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Leche & Honey" onerror="this.style.display='none'">
+        <img src="assets/logo.png" alt="Leche & Honey Logo">
         <span>Leche & Honey</span>
       </a>
 
       <ul class="nav-links">
         <li><a href="#catalogo">Catálogo de Plantas</a></li>
+        <li><a href="#arreglos">Arreglos Vivos Personalizados</a></li>
         <li><a href="#b2b">Suministro B2B / Lotes</a></li>
         <li><a href="#servicios">Servicios & Paisajismo</a></li>
       </ul>
@@ -1087,7 +1360,7 @@
           Plantas Tropicales de Alta Calidad & <span>Paisajismo de Autor</span>
         </h1>
         <p class="hero-description">
-          Suministro directo de vivero para hogares, oficinas y proyectos corporativos. Especies 100% aclimatadas al clima de Panamá, disponibles al detal y en lotes mayoristas.
+          Suministro directo de vivero para hogares, oficinas y proyectos corporativos. Especies 100% aclimatadas al clima de Panamá, disponibles al detal, en lotes mayoristas o en arreglos vivos combinados.
         </p>
 
         <div class="shipping-alert">
@@ -1098,8 +1371,8 @@
           <a href="#catalogo" class="btn btn-primary">
             🌱 Explorar Catálogo y Precios
           </a>
-          <a href="#b2b" class="btn btn-outline">
-            🏢 Cotización Mayorista B2B
+          <a href="#arreglos" class="btn btn-outline">
+            🪴 Armar Arreglo Vivo
           </a>
         </div>
 
@@ -1139,15 +1412,15 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Colección Botánica</span>
-        <h2 class="section-title">Nuestras Plantas & Precios</h2>
-        <p class="section-desc">Agrega tus plantas al carrito de compras. Al confirmar, tu pedido se enviará ordenado por WhatsApp calculando el envío según tu dirección.</p>
+        <h2 class="section-title">Nuestras Plantas, Variedades & Precios</h2>
+        <p class="section-desc">Selecciona tus ejemplares favoritos. Puedes explorar múltiples fotos de cada especie y sus variedades haciendo clic en "Ver Ficha".</p>
       </div>
 
       <!-- Controls -->
       <div class="catalog-controls">
         <div class="catalog-search">
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico (ej. Monstera, Areca, Sansevieria)...">
+          <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico (ej. Sansevieria, Diefenbachia, Areca, Magueyito)...">
         </div>
 
         <div class="category-pills">
@@ -1162,6 +1435,110 @@
       <!-- Plant Cards Container -->
       <div class="plant-grid" id="plantGrid">
         <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECCIÓN: TALLER DE ARREGLOS VIVOS Y JARDINERAS
+       ======================================================== -->
+  <section id="arreglos" class="arrangements-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Diseño Botánico a Medida</span>
+        <h2 class="section-title">Crea tu Arreglo Vivo Personalizado</h2>
+        <p class="section-desc">¿Quieres una maceta o jardinera combinada (por ejemplo: Magueyito + Azalea + Pothos)? Elige tu contenedor, tus plantas y te lo entregamos listo y sembrado.</p>
+      </div>
+
+      <div class="builder-card">
+        <!-- Main Builder Form -->
+        <div class="builder-main">
+          <!-- Step 1: Base / Pot -->
+          <div class="builder-step-title">
+            <span class="step-number">1</span> Elige tu Maceta o Base:
+          </div>
+          <div class="pot-options-grid" id="potOptionsContainer">
+            <div class="pot-option selected" data-id="cemento" data-name="Maceta Cemento Blanco/Gris" data-price="14">
+              <div class="pot-option-icon">🏺</div>
+              <div class="pot-option-name">Cemento Moderno</div>
+              <div class="pot-option-price">+$14.00</div>
+            </div>
+            <div class="pot-option" data-id="jardinera" data-name="Jardinera Rectangular (Balcón)" data-price="22">
+              <div class="pot-option-icon">🪴</div>
+              <div class="pot-option-name">Jardinera Terraza</div>
+              <div class="pot-option-price">+$22.00</div>
+            </div>
+            <div class="pot-option" data-id="barro" data-name="Macetero Barro Artesanal" data-price="9">
+              <div class="pot-option-icon">🥣</div>
+              <div class="pot-option-name">Barro Tradicional</div>
+              <div class="pot-option-price">+$9.00</div>
+            </div>
+            <div class="pot-option" data-id="colgante" data-name="Canasta / Colgante de Fibras" data-price="8">
+              <div class="pot-option-icon">🧺</div>
+              <div class="pot-option-name">Canasta Colgante</div>
+              <div class="pot-option-price">+$8.00</div>
+            </div>
+            <div class="pot-option" data-id="sin_maceta" data-name="Sin Maceta (Solo Plantas en Bolsa)" data-price="0">
+              <div class="pot-option-icon">🌱</div>
+              <div class="pot-option-name">Solo Plantas</div>
+              <div class="pot-option-price">+$0.00</div>
+            </div>
+          </div>
+
+          <!-- Step 2: Plants Mix -->
+          <div class="builder-step-title">
+            <span class="step-number">2</span> Selecciona tus Plantas (Elige 2 a 5):
+          </div>
+          <div class="mix-plant-grid" id="mixPlantGrid">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Step 3: Finish -->
+          <div class="builder-step-title">
+            <span class="step-number">3</span> Cobertura Decorativa:
+          </div>
+          <div class="finish-options" id="finishOptionsContainer">
+            <div class="finish-pill selected" data-name="Piedras Blancas de Río">🪨 Piedras de Río Blancas</div>
+            <div class="finish-pill" data-name="Corteza de Pino Orgánica">🌲 Corteza de Pino</div>
+            <div class="finish-pill" data-name="Musgo Verde Vivo">🌿 Musgo Verde</div>
+            <div class="finish-pill" data-name="Tierra Natural sin Cobertura">🪵 Tierra Natural</div>
+          </div>
+        </div>
+
+        <!-- Sidebar Summary -->
+        <div class="builder-sidebar">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 6px; color: #fff;">🪴 Tu Arreglo Vivo</h3>
+            <p style="font-size: 0.85rem; color: #b7cfbe; margin-bottom: 20px;">Diseñado a tu gusto, sembrado con sustrato nutritivo listo para lucir.</p>
+
+            <div class="summary-box">
+              <div class="summary-item">
+                <span>Contenedor:</span>
+                <strong id="summaryPot">Cemento Moderno ($14)</strong>
+              </div>
+              <div class="summary-item">
+                <span>Plantas (<span id="summaryCount">0</span>):</span>
+                <span id="summaryPlantsList" style="text-align: right; font-size: 0.82rem; max-width: 170px;">Ninguna seleccionada</span>
+              </div>
+              <div class="summary-item">
+                <span>Cobertura:</span>
+                <strong id="summaryFinish">Piedras de Río Blancas</strong>
+              </div>
+              <div class="summary-total">
+                <span>Total Estimado:</span>
+                <span id="summaryTotal">$14.00 USD</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.78rem; color: #9ebd9c; margin-bottom: 20px;">
+              🚚 <em>El costo de flete se cotiza según tu dirección exacta en Panamá.</em>
+            </div>
+          </div>
+
+          <button class="btn btn-accent" style="width: 100%; font-size: 0.95rem; padding: 14px;" onclick="cotizarArregloWhatsApp()">
+            📲 Cotizar Este Arreglo por WhatsApp
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1271,17 +1648,30 @@
     </div>
   </section>
 
-  <!-- Modal Ficha Técnica -->
+  <!-- Modal Ficha Técnica con Galería Multivariedad -->
   <div class="modal-overlay" id="plantModal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">×</button>
       <div class="modal-grid">
-        <img src="" id="modalImg" class="modal-img" alt="Planta">
+        <div class="modal-gallery-wrap">
+          <div class="modal-main-img-box">
+            <img src="" id="modalMainImg" alt="Foto Planta">
+          </div>
+          <div class="modal-thumbs-row" id="modalThumbsRow">
+            <!-- Thumbs generated by JS -->
+          </div>
+        </div>
+
         <div class="modal-body">
           <div>
             <span id="modalCategory" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--accent);"></span>
             <h3 id="modalTitle" style="font-size: 1.4rem; margin: 4px 0; color: var(--primary-dark);"></h3>
-            <p id="modalScientific" style="font-style: italic; color: var(--text-muted); margin-bottom: 12px; font-size: 0.88rem;"></p>
+            <p id="modalScientific" style="font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.88rem;"></p>
+            
+            <div id="modalVarietiesBox" style="background: #fbfbf9; border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; font-size: 0.82rem; color: var(--primary);">
+              <!-- Varieties detail -->
+            </div>
+
             <p id="modalDesc" style="font-size: 0.88rem; color: var(--text); line-height: 1.55; margin-bottom: 14px;"></p>
             
             <div style="background: var(--bg); padding: 12px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 14px;">
@@ -1366,6 +1756,7 @@
         <h5>Navegación</h5>
         <ul>
           <li><a href="#catalogo">Catálogo Completo</a></li>
+          <li><a href="#arreglos">Arreglos Vivos a Medida</a></li>
           <li><a href="#b2b">Suministro B2B & Proyectos</a></li>
           <li><a href="#servicios">Servicios de Paisajismo</a></li>
           <li><a href="javascript:void(0)" onclick="toggleCart()">Ver Mi Pedido</a></li>
@@ -1394,13 +1785,42 @@
 
     const plantsData = [
       {
+        id: "sansevieria",
+        name: "Sansevieria (Espada San Jorge)",
+        scientific: "Dracaena trifasciata",
+        category: "suculentas",
+        categoryName: "Arquitectónica & Resistente",
+        price: 4,
+        images: ["assets/sansevieria.jpg", "assets/sansevieria_2.jpg", "assets/sansevieria_3.jpg"],
+        varieties: "Variedades disponibles: Laurentii (con borde amarillo dorado), Zeylanica (franjas verde plata) y variedad enana/nido.",
+        light: "Sombra a Pleno Sol",
+        water: "Riego espaciado cada 10-15 días",
+        desc: "Prácticamente indestructible y gran purificadora de aire. De porte vertical escultórico, disponible en varias alturas y matices.",
+        care: "Tolera descuidos de riego. Regar solo cuando la tierra esté completamente seca."
+      },
+      {
+        id: "difenbachia",
+        name: "Dieffenbachia (Millonaria & Seguine)",
+        scientific: "Dieffenbachia amoena / seguine",
+        category: "sombra",
+        categoryName: "Interior & Sombra",
+        price: 5,
+        images: ["assets/difenbachia.jpg", "assets/difenbachia_2.jpg", "assets/difenbachia_3.jpg"],
+        varieties: "Variedades disponibles: D. Amoena (Millonaria tradicional de hojas anchas) y D. Seguine (variegación moteada compacta).",
+        light: "Sombra / Luz filtrada",
+        water: "1-2 veces por semana",
+        desc: "Follaje variegado exuberante en verde y marfil. Disponible en plantas individuales en bolsa o ejemplares tupidos de varios tallos.",
+        care: "Evitar el encharcamiento; limpiar el polvo de las hojas periódicamente con un paño húmedo."
+      },
+      {
         id: "areca",
         name: "Palma Areca (Frutos de Oro)",
         scientific: "Dypsis lutescens",
         category: "palmas",
         categoryName: "Palma de Gran Porte",
         price: 7,
-        image: "assets/areca.jpg",
+        images: ["assets/areca.jpg", "assets/areca_2.jpg", "assets/areca_3.jpg"],
+        varieties: "Formatos disponibles: Planta suelta individual o ejemplares en isla / grupo tupido para cerramiento.",
         light: "Semisombra / Luz brillante",
         water: "Riego moderado 2-3 veces/semana",
         desc: "Palma tropical clásica y elegante. Excelente para delimitar espacios, terrazas, lobbies y jardines residenciales.",
@@ -1413,37 +1833,12 @@
         category: "palmas",
         categoryName: "Palma Exclusiva",
         price: 20,
-        image: "assets/palma_roja.jpg",
+        images: ["assets/palma_roja.jpg", "assets/palma_roja_2.jpg"],
+        varieties: "Formatos: Ejemplar joven para macetón o mata en isla con tallos de rojo escarlata intenso.",
         light: "Sol moderado / Semisombra",
         water: "Riego frecuente, alta humedad",
         desc: "Joya botánica de tallos rojos vibrantes. El punto focal por excelencia para residencias de alto nivel y accesos arquitectónicos.",
         care: "Requiere humedad ambiental constante y suelo húmedo pero con buen drenaje. Proteger de vientos secos."
-      },
-      {
-        id: "difenbachia",
-        name: "Millonaria (Dieffenbachia Amoena)",
-        scientific: "Dieffenbachia amoena",
-        category: "sombra",
-        categoryName: "Interior & Sombra",
-        price: 5,
-        image: "assets/difenbachia.jpg",
-        light: "Sombra / Luz filtrada",
-        water: "1-2 veces por semana",
-        desc: "Follaje variegado exuberante en verde y marfil. Aporta luminosidad inmediata a salas, pasillos y oficinas.",
-        care: "Evitar el encharcamiento; limpiar el polvo de las hojas periódicamente con un paño húmedo."
-      },
-      {
-        id: "sansevieria",
-        name: "Sansevieria (Espada San Jorge)",
-        scientific: "Dracaena trifasciata",
-        category: "suculentas",
-        categoryName: "Arquitectónica & Resistente",
-        price: 4,
-        image: "assets/sansevieria.jpg",
-        light: "Sombra a Pleno Sol",
-        water: "Riego espaciado cada 10-15 días",
-        desc: "Prácticamente indestructible y gran purificadora de aire. De porte vertical escultórico, perfecta para macetas modernas.",
-        care: "Tolera descuidos de riego. Regar solo cuando la tierra esté completamente seca."
       },
       {
         id: "monstera",
@@ -1452,63 +1847,12 @@
         category: "sombra",
         categoryName: "Trepadora de Sombra",
         price: 4,
-        image: "assets/monstera.jpg",
+        images: ["assets/monstera.jpg", "assets/monstera_2.jpg", "assets/monstera_3.jpg"],
+        varieties: "Formatos: Planta rastrera en bolsa o guiada en tutor de soporte.",
         light: "Luz indirecta / Semisombra",
         water: "Riego regular cuando seque el sustrato",
         desc: "Hermosa arácea trepadora de hojas verdes profundas con fenestraciones (agujeros) naturales a lo largo de la nervadura.",
         care: "Ideal con tutor de musgo o madera para promover hojas más grandes."
-      },
-      {
-        id: "sabila",
-        name: "Sábila (Aloe Vera)",
-        scientific: "Aloe barbadensis Miller",
-        category: "suculentas",
-        categoryName: "Suculenta Medicinal",
-        price: 5,
-        image: "assets/sabila.jpg",
-        light: "Pleno Sol / Muy iluminado",
-        water: "Riego escaso cada 10 días",
-        desc: "Planta medicinal y decorativa de bajísimo mantenimiento. Aporta un diseño limpio y propiedades cicatrizantes naturales.",
-        care: "Requiere maceta con drenaje rápido y suelo arenoso."
-      },
-      {
-        id: "golden_pothos",
-        name: "Pothos Dorado",
-        scientific: "Epipremnum aureum",
-        category: "sombra",
-        categoryName: "Colgante de Interior",
-        price: 4,
-        image: "assets/golden_pothos.jpg",
-        light: "Semisombra / Luz indirecta",
-        water: "Riego semanal moderado",
-        desc: "Enredadera vivaz de hojas acorazonadas con vetas amarillas doradas. Ideal para repisas, macetas colgantes y escritorios.",
-        care: "Muy versátil y de rápido crecimiento en climas cálidos."
-      },
-      {
-        id: "helecho",
-        name: "Helecho Tropical",
-        scientific: "Nephrolepis exaltata",
-        category: "sombra",
-        categoryName: "Follaje Colgante",
-        price: 4,
-        image: "assets/helecho.jpg",
-        light: "Sombra fresca / Luz difusa",
-        water: "Riego frecuente, mantener humedad",
-        desc: "Frondas arqueadas finas de verde radiante. Transmite frescura silvestre y elegancia en balcones y terrazas protegidas.",
-        care: "Pulverizar las hojas con agua sin cloro en días secos."
-      },
-      {
-        id: "fairy_castle",
-        name: "Cactus Castillo de Hadas",
-        scientific: "Acanthocereus tetragonus",
-        category: "suculentas",
-        categoryName: "Cactus Escultórico",
-        price: 5,
-        image: "assets/fairy_castle.jpg",
-        light: "Pleno Sol / Luz solar directa",
-        water: "Riego mínimo cada 15-20 días",
-        desc: "Cactus de tallos prismáticos que forman torrecillas semejantes a un castillo de fantasía. Una pieza decorativa única.",
-        care: "No sobre-regar en ninguna circunstancia; necesita sol directo."
       },
       {
         id: "magueyito",
@@ -1517,11 +1861,82 @@
         category: "sol",
         categoryName: "Cubresuelos & Acento",
         price: 3,
-        image: "assets/magueyito.jpg",
+        images: ["assets/magueyito.jpg", "assets/magueyito_2.jpg", "assets/magueyito_3.jpg"],
+        varieties: "Formatos: Matas individuales y grupos tupidos con envés púrpura profundo.",
         light: "Sol o Semisombra",
         water: "Riego moderado",
-        desc: "Hojas lanceoladas verdes en el haz y violeta brillante en el envés. Excelente para crear contrastes de color en canteros.",
+        desc: "Hojas lanceoladas verdes en el haz y violeta brillante en el envés. La planta perfecta para crear contrastes de color en macetas combinadas.",
         care: "Resistente a la intemperie y de rápida propagación en exteriores."
+      },
+      {
+        id: "helecho",
+        name: "Helecho Tropical",
+        scientific: "Nephrolepis exaltata",
+        category: "sombra",
+        categoryName: "Follaje Colgante",
+        price: 4,
+        images: ["assets/helecho.jpg", "assets/helecho_2.jpg"],
+        varieties: "Formatos: Frondas arqueadas para maceta de mesa o montaje colgante.",
+        light: "Sombra fresca / Luz difusa",
+        water: "Riego frecuente, mantener humedad",
+        desc: "Frondas arqueadas finas de verde radiante. Transmite frescura silvestre y elegancia en balcones y terrazas protegidas.",
+        care: "Pulverizar las hojas con agua sin cloro en días secos."
+      },
+      {
+        id: "azalea",
+        name: "Azalea Tropical",
+        scientific: "Rhododendron simsii",
+        category: "sol",
+        categoryName: "Floración Ornamental",
+        price: 5,
+        images: ["assets/azalea.jpg", "assets/azalea_2.jpg"],
+        varieties: "Formatos: Arbusto con botones florales en tonos rosa y fucsia vivo.",
+        light: "Luz brillante sin sol de mediodía",
+        water: "Suelo siempre fresco",
+        desc: "Arbusto compacto cargado de flores vibrantes. Llena de vida y color jardineras residenciales y arreglos vivos.",
+        care: "Prefiere sustratos ligeramente ácidos y riego con agua fresca."
+      },
+      {
+        id: "golden_pothos",
+        name: "Pothos Dorado / Teléfono",
+        scientific: "Epipremnum aureum",
+        category: "sombra",
+        categoryName: "Colgante de Interior",
+        price: 4,
+        images: ["assets/golden_pothos.jpg", "assets/pothos.jpg"],
+        varieties: "Variedades: Golden Pothos (variegado amarillo) y Pothos verde clásico.",
+        light: "Semisombra / Luz indirecta",
+        water: "Riego semanal moderado",
+        desc: "Enredadera vivaz de hojas acorazonadas con vetas amarillas doradas. Ideal para repisas, macetas colgantes o bordes de jardineras.",
+        care: "Muy versátil y de rápido crecimiento en climas cálidos."
+      },
+      {
+        id: "sabila",
+        name: "Sábila (Aloe Vera)",
+        scientific: "Aloe barbadensis Miller",
+        category: "suculentas",
+        categoryName: "Suculenta Medicinal",
+        price: 5,
+        images: ["assets/sabila.jpg", "assets/sabila_2.jpg"],
+        varieties: "Formatos: Ejemplar joven compacto y planta madre con hijuelos.",
+        light: "Pleno Sol / Muy iluminado",
+        water: "Riego escaso cada 10 días",
+        desc: "Planta medicinal y decorativa de bajísimo mantenimiento. Aporta un diseño limpio y propiedades cicatrizantes naturales.",
+        care: "Requiere maceta con drenaje rápido y suelo arenoso."
+      },
+      {
+        id: "fairy_castle",
+        name: "Cactus Castillo de Hadas",
+        scientific: "Acanthocereus tetragonus",
+        category: "suculentas",
+        categoryName: "Cactus Escultórico",
+        price: 5,
+        images: ["assets/fairy_castle.jpg"],
+        varieties: "Especie columnar ramificada en torrecillas geométricas.",
+        light: "Pleno Sol / Luz solar directa",
+        water: "Riego mínimo cada 15-20 días",
+        desc: "Cactus de tallos prismáticos que forman torrecillas semejantes a un castillo de fantasía. Una pieza decorativa única.",
+        care: "No sobre-regar en ninguna circunstancia; necesita sol directo."
       },
       {
         id: "maguey",
@@ -1530,7 +1945,8 @@
         category: "sol",
         categoryName: "Agave Estructural",
         price: 5,
-        image: "assets/maguey.jpg",
+        images: ["assets/maguey.jpg"],
+        varieties: "Planta arquitectónica de pencas rígidas.",
         light: "Pleno Sol",
         water: "Riego escaso",
         desc: "Agave ornamental de porte sobrio y simétrico. Sobresaliente resistencia a sequías y condiciones de brisa marina.",
@@ -1543,7 +1959,8 @@
         category: "sol",
         categoryName: "Árbol Frutal / Exterior",
         price: 10,
-        image: "assets/higuera.jpg",
+        images: ["assets/higuera.jpg"],
+        varieties: "Planta frutal aclimatada para patio o macetón.",
         light: "Pleno Sol",
         water: "Riego regular",
         desc: "Planta frutal mediterránea adaptada al clima cálido. Hojas lobuladas y producción de deliciosos higos dulces.",
@@ -1556,28 +1973,261 @@
         category: "sol",
         categoryName: "Arbusto Floral Aromático",
         price: 4,
-        image: "assets/ayer_hoy_manana.jpg",
+        images: ["assets/ayer_hoy_manana.jpg", "assets/ayer_hoy_manana_2.jpg"],
+        varieties: "Arbusto floral con floración multicolor en 3 etapas.",
         light: "Sol suave matutino / Semisombra",
         water: "Riego regular manteniendo suelo fresco",
         desc: "Fascinante arbusto cuyas flores cambian de violeta intenso a lavanda y blanco a lo largo de 3 días con fragancia embriagadora.",
         care: "Florece abundantemente con abono orgánico cada temporada."
-      },
-      {
-        id: "azalea",
-        name: "Azalea Tropical",
-        scientific: "Rhododendron simsii",
-        category: "sol",
-        categoryName: "Floración Ornamental",
-        price: 5,
-        image: "assets/azalea.jpg",
-        light: "Luz brillante sin sol de mediodía",
-        water: "Suelo siempre fresco",
-        desc: "Arbusto compacto cargado de flores vibrantes. Llena de vida y color jardineras residenciales y porches.",
-        care: "Prefiere sustratos ligeramente ácidos y riego con agua fresca."
       }
     ];
 
-    // State: Cart
+    // ==========================================================
+    // RENDER CATALOG
+    // ==========================================================
+    const plantGrid = document.getElementById('plantGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.pill-btn');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderPlants() {
+      const filtered = plantsData.filter(plant => {
+        const matchesCategory = currentFilter === 'all' || plant.category === currentFilter;
+        const matchesSearch = plant.name.toLowerCase().includes(currentSearch.toLowerCase()) || 
+                              plant.scientific.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                              (plant.varieties && plant.varieties.toLowerCase().includes(currentSearch.toLowerCase()));
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        plantGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+            <p style="font-size: 1.2rem; color: var(--text-muted);">No encontramos plantas que coincidan con tu búsqueda.</p>
+          </div>
+        `;
+        return;
+      }
+
+      plantGrid.innerHTML = filtered.map(plant => `
+        <div class="plant-card">
+          <div class="card-img-wrap" onclick="openModal('${plant.id}')" style="cursor: pointer;">
+            <img src="${plant.images[0]}" alt="${plant.name}" loading="lazy">
+            <span class="card-badge">${plant.categoryName}</span>
+            <span class="photo-indicator">📷 ${plant.images.length} ${plant.images.length > 1 ? 'fotos' : 'foto'}</span>
+            <span class="card-price">$${plant.price}</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">${plant.name}</h3>
+            <div class="card-scientific">${plant.scientific}</div>
+            <p class="card-desc">${plant.desc}</p>
+            ${plant.images.length > 1 ? `<div class="card-varieties-tag">✨ Con ${plant.images.length} fotos y variedades</div>` : ''}
+            <div class="card-shipping-tag">🚚 Envío según dirección</div>
+            <div class="card-actions">
+              <button class="btn btn-outline" onclick="openModal('${plant.id}')">Ver Ficha</button>
+              <button class="btn btn-accent" onclick="addToCart('${plant.id}')">🛒 Añadir</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderPlants();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderPlants();
+    });
+
+    // ==========================================================
+    // MODAL CON GALERÍA Y VARIEDADES
+    // ==========================================================
+    const modal = document.getElementById('plantModal');
+    const modalMainImg = document.getElementById('modalMainImg');
+    const modalThumbsRow = document.getElementById('modalThumbsRow');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalScientific = document.getElementById('modalScientific');
+    const modalVarietiesBox = document.getElementById('modalVarietiesBox');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalCare = document.getElementById('modalCare');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalAddCartBtn = document.getElementById('modalAddCartBtn');
+
+    function openModal(plantId) {
+      const plant = plantsData.find(p => p.id === plantId);
+      if (!plant) return;
+
+      modalMainImg.src = plant.images[0];
+      modalCategory.textContent = plant.categoryName;
+      modalTitle.textContent = plant.name;
+      modalScientific.textContent = plant.scientific;
+      modalVarietiesBox.innerHTML = `<strong>Variedades & Formatos:</strong> ${plant.varieties || 'Disponible en bolsa vivero.'}`;
+      modalDesc.textContent = plant.desc;
+      modalCare.innerHTML = `☀️ <strong>Luz:</strong> ${plant.light}<br>💧 <strong>Riego:</strong> ${plant.water}<br>🌱 <strong>Cuidado:</strong> ${plant.care}`;
+      modalPrice.textContent = `$${plant.price} USD`;
+
+      // Render thumbs
+      modalThumbsRow.innerHTML = plant.images.map((img, idx) => `
+        <img src="${img}" class="modal-thumb ${idx === 0 ? 'active' : ''}" onclick="selectModalThumb('${img}', this)" alt="Miniatura">
+      `).join('');
+
+      modalAddCartBtn.onclick = () => {
+        addToCart(plant.id);
+        closeModal();
+      };
+
+      modal.style.display = 'flex';
+    }
+
+    function selectModalThumb(imgSrc, element) {
+      modalMainImg.src = imgSrc;
+      document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // ==========================================================
+    // CREADOR DE ARREGLOS VIVOS (BUILDER)
+    // ==========================================================
+    let builderState = {
+      pot: { id: "cemento", name: "Maceta Cemento Blanco/Gris", price: 14 },
+      plants: [],
+      finish: "Piedras Blancas de Río"
+    };
+
+    const mixPlantPool = [
+      { id: "magueyito", name: "Magueyito (Púrpura)", price: 3, img: "assets/magueyito.jpg" },
+      { id: "azalea", name: "Azalea (Floral)", price: 5, img: "assets/azalea.jpg" },
+      { id: "golden_pothos", name: "Pothos Dorado (Colgante)", price: 4, img: "assets/golden_pothos.jpg" },
+      { id: "sansevieria", name: "Sansevieria (Vertical)", price: 4, img: "assets/sansevieria.jpg" },
+      { id: "helecho", name: "Helecho (Textura)", price: 4, img: "assets/helecho.jpg" },
+      { id: "difenbachia", name: "Dieffenbachia Seguine", price: 5, img: "assets/difenbachia_2.jpg" },
+      { id: "sabila", name: "Sábila (Aloe)", price: 5, img: "assets/sabila.jpg" },
+      { id: "fairy_castle", name: "Cactus Castillo", price: 5, img: "assets/fairy_castle.jpg" }
+    ];
+
+    function initBuilder() {
+      // 1. Pot selectors
+      const potOptions = document.querySelectorAll('.pot-option');
+      potOptions.forEach(pot => {
+        pot.addEventListener('click', () => {
+          potOptions.forEach(p => p.classList.remove('selected'));
+          pot.classList.add('selected');
+          builderState.pot = {
+            id: pot.dataset.id,
+            name: pot.dataset.name,
+            price: parseFloat(pot.dataset.price)
+          };
+          updateBuilderSummary();
+        });
+      });
+
+      // 2. Mix plant pool checkboxes
+      const mixGrid = document.getElementById('mixPlantGrid');
+      mixGrid.innerHTML = mixPlantPool.map(p => `
+        <div class="mix-plant-item" id="mix_item_${p.id}" onclick="toggleMixPlant('${p.id}')">
+          <img src="${p.img}" class="mix-plant-thumb" alt="${p.name}">
+          <div class="mix-plant-name">${p.name}</div>
+          <div class="mix-plant-price">+$${p.price}.00</div>
+        </div>
+      `).join('');
+
+      // Pre-select Magueyito, Azalea, Pothos as default arrangement suggestion!
+      toggleMixPlant('magueyito');
+      toggleMixPlant('azalea');
+      toggleMixPlant('golden_pothos');
+
+      // 3. Finishes
+      const finishPills = document.querySelectorAll('.finish-pill');
+      finishPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          finishPills.forEach(p => p.classList.remove('selected'));
+          pill.classList.add('selected');
+          builderState.finish = pill.dataset.name;
+          updateBuilderSummary();
+        });
+      });
+    }
+
+    function toggleMixPlant(plantId) {
+      const plant = mixPlantPool.find(p => p.id === plantId);
+      if (!plant) return;
+
+      const idx = builderState.plants.findIndex(p => p.id === plantId);
+      const itemEl = document.getElementById(`mix_item_${plantId}`);
+
+      if (idx > -1) {
+        builderState.plants.splice(idx, 1);
+        if (itemEl) itemEl.classList.remove('checked');
+      } else {
+        if (builderState.plants.length >= 6) {
+          alert("Puedes seleccionar un máximo de 6 plantas por jardinera o maceta.");
+          return;
+        }
+        builderState.plants.push(plant);
+        if (itemEl) itemEl.classList.add('checked');
+      }
+
+      updateBuilderSummary();
+    }
+
+    function updateBuilderSummary() {
+      document.getElementById('summaryPot').textContent = `${builderState.pot.name} ($${builderState.pot.price})`;
+      document.getElementById('summaryCount').textContent = builderState.plants.length;
+
+      const listEl = document.getElementById('summaryPlantsList');
+      if (builderState.plants.length === 0) {
+        listEl.textContent = "Ninguna seleccionada";
+      } else {
+        listEl.textContent = builderState.plants.map(p => p.name).join(', ');
+      }
+
+      document.getElementById('summaryFinish').textContent = builderState.finish;
+
+      const plantsTotal = builderState.plants.reduce((sum, p) => sum + p.price, 0);
+      const total = builderState.pot.price + plantsTotal;
+      document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)} USD`;
+    }
+
+    function cotizarArregloWhatsApp() {
+      if (builderState.plants.length === 0) {
+        alert("Por favor selecciona al menos 1 o 2 plantas para tu arreglo vivo.");
+        return;
+      }
+
+      const plantsListStr = builderState.plants.map(p => `• ${p.name} ($${p.price} USD)`).join('%0A');
+      const plantsTotal = builderState.plants.reduce((sum, p) => sum + p.price, 0);
+      const grandTotal = builderState.pot.price + plantsTotal;
+
+      const message = `*SOLICITUD DE ARREGLO VIVO PERSONALIZADO - LECHE %26 HONEY*%0A%0A` +
+                      `🪴 *Base / Maceta:* ${builderState.pot.name} ($${builderState.pot.price} USD)%0A` +
+                      `🌿 *Plantas seleccionadas:*%0A${plantsListStr}%0A` +
+                      `✨ *Cobertura decorativa:* ${builderState.finish}%0A` +
+                      `💰 *Presupuesto Estimado:* $${grandTotal.toFixed(2)} USD%0A%0A` +
+                      `🚚 *Nota:* Deseo coordinar el costo de envío a mi dirección y disponibilidad para armarlo.`;
+
+      window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
+    }
+
+    // ==========================================================
+    // CARRITO DE COMPRAS & PEDIDOS
+    // ==========================================================
     let cart = [];
 
     function addToCart(plantId) {
@@ -1588,7 +2238,7 @@
       if (existing) {
         existing.qty += 1;
       } else {
-        cart.push({ ...plant, qty: 1 });
+        cart.push({ ...plant, qty: 1, currentImg: plant.images[0] });
       }
 
       updateCartUI();
@@ -1631,7 +2281,7 @@
         subtotal += itemTotal;
         return `
           <div class="cart-item">
-            <img src="${item.image}" class="cart-item-img" alt="${item.name}">
+            <img src="${item.currentImg}" class="cart-item-img" alt="${item.name}">
             <div class="cart-item-info">
               <h4>${item.name}</h4>
               <div class="cart-item-price">$${item.price} c/u &bull; Total: $${itemTotal}</div>
@@ -1651,7 +2301,6 @@
 
     function toggleCart() {
       const drawer = document.getElementById('cartDrawer');
-      const overlay = document.getElementById('cartOverlay');
       if (drawer.classList.contains('open')) {
         closeCart();
       } else {
@@ -1697,107 +2346,6 @@
       window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
     }
 
-    // Render Plants
-    const plantGrid = document.getElementById('plantGrid');
-    const searchInput = document.getElementById('searchInput');
-    const filterBtns = document.querySelectorAll('.pill-btn');
-
-    let currentFilter = 'all';
-    let currentSearch = '';
-
-    function renderPlants() {
-      const filtered = plantsData.filter(plant => {
-        const matchesCategory = currentFilter === 'all' || plant.category === currentFilter;
-        const matchesSearch = plant.name.toLowerCase().includes(currentSearch.toLowerCase()) || 
-                              plant.scientific.toLowerCase().includes(currentSearch.toLowerCase());
-        return matchesCategory && matchesSearch;
-      });
-
-      if (filtered.length === 0) {
-        plantGrid.innerHTML = `
-          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
-            <p style="font-size: 1.2rem; color: var(--text-muted);">No encontramos plantas que coincidan con tu búsqueda.</p>
-          </div>
-        `;
-        return;
-      }
-
-      plantGrid.innerHTML = filtered.map(plant => `
-        <div class="plant-card">
-          <div class="card-img-wrap" onclick="openModal('${plant.id}')" style="cursor: pointer;">
-            <img src="${plant.image}" alt="${plant.name}" loading="lazy">
-            <span class="card-badge">${plant.categoryName}</span>
-            <span class="card-price">$${plant.price}</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">${plant.name}</h3>
-            <div class="card-scientific">${plant.scientific}</div>
-            <p class="card-desc">${plant.desc}</p>
-            <div class="card-shipping-tag">🚚 Envío según dirección</div>
-            <div class="card-actions">
-              <button class="btn btn-outline" onclick="openModal('${plant.id}')">Ver Ficha</button>
-              <button class="btn btn-accent" onclick="addToCart('${plant.id}')">🛒 Añadir</button>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    // Filter Listeners
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        renderPlants();
-      });
-    });
-
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value;
-      renderPlants();
-    });
-
-    // Modal Functions
-    const modal = document.getElementById('plantModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalCategory = document.getElementById('modalCategory');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalScientific = document.getElementById('modalScientific');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalCare = document.getElementById('modalCare');
-    const modalPrice = document.getElementById('modalPrice');
-    const modalAddCartBtn = document.getElementById('modalAddCartBtn');
-
-    function openModal(plantId) {
-      const plant = plantsData.find(p => p.id === plantId);
-      if (!plant) return;
-
-      modalImg.src = plant.image;
-      modalCategory.textContent = plant.categoryName;
-      modalTitle.textContent = plant.name;
-      modalScientific.textContent = plant.scientific;
-      modalDesc.textContent = plant.desc;
-      modalCare.innerHTML = `☀️ <strong>Luz:</strong> ${plant.light}<br>💧 <strong>Riego:</strong> ${plant.water}<br>🌱 <strong>Cuidado:</strong> ${plant.care}`;
-      modalPrice.textContent = `$${plant.price} USD`;
-      
-      modalAddCartBtn.onclick = () => {
-        addToCart(plant.id);
-        closeModal();
-      };
-
-      modal.style.display = 'flex';
-    }
-
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    // B2B Quote to WhatsApp
     function enviarCotizacionB2B() {
       const plant = document.getElementById('b2bPlant').value;
       const qty = document.getElementById('b2bQty').value;
@@ -1813,8 +2361,9 @@
       window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
     }
 
-    // Initial render
+    // Initialize
     renderPlants();
+    initBuilder();
     updateCartUI();
   </script>
 </body>
