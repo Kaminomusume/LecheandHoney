@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Leche & Honey | Plantas Tropicales, Arreglos Vivos & Paisajismo en Panamá</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <meta name="description" content="Vivero botánico en Panamá. Catálogo de plantas ornamentales aclimatadas, creador de arreglos vivos personalizados, macetería y suministro mayorista para proyectos en Panamá Oeste, Ciudad y Colón.">
+  <meta name="description" content="Vivero botánico en Panamá. Catálogo de plantas ornamentales aclimatadas, arreglos vivos y suministro mayorista en Panamá Oeste, Ciudad y Colón.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #183b28;
@@ -28,12 +28,14 @@
       --radius: 14px;
       --font-heading: 'Playfair Display', serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
+      --header-height: 70px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -43,6 +45,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      width: 100%;
     }
 
     img {
@@ -56,52 +59,100 @@
       color: inherit;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 16px;
+    button, input, select, textarea {
+      font-family: inherit;
     }
 
-    /* Header & Navigation */
+    .container {
+      width: 92%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    /* ========================================================
+       HEADER RESPONSIVO Y SMART SCROLL (OCULTA AL BAJAR)
+       ======================================================== */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(251, 251, 249, 0.96);
-      backdrop-filter: blur(10px);
+      background: rgba(251, 251, 249, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      will-change: transform;
+      height: var(--header-height);
+    }
+
+    header.header-hidden {
+      transform: translateY(-100%);
+    }
+
+    header.header-scrolled {
+      box-shadow: 0 4px 18px rgba(15, 39, 26, 0.08);
     }
 
     .nav-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 100%;
+      gap: 12px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger-btn svg {
+      width: 26px;
+      height: 26px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       color: var(--primary);
+      white-space: nowrap;
+      user-select: none;
     }
 
     .brand img {
-      width: 50px;
-      height: 50px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--accent);
       box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       list-style: none;
     }
 
@@ -119,7 +170,8 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
     .btn {
@@ -127,13 +179,16 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 99px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.2s ease;
       border: none;
+      min-height: 42px;
+      text-align: center;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -141,7 +196,7 @@
       color: #fff;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover, .btn-primary:active {
       background: var(--primary-light);
       box-shadow: 0 4px 14px rgba(24, 59, 40, 0.25);
     }
@@ -151,7 +206,7 @@
       color: #fff;
     }
 
-    .btn-accent:hover {
+    .btn-accent:hover, .btn-accent:active {
       background: var(--accent-hover);
       box-shadow: 0 4px 14px rgba(217, 154, 56, 0.3);
     }
@@ -162,7 +217,7 @@
       background: transparent;
     }
 
-    .btn-outline:hover {
+    .btn-outline:hover, .btn-outline:active {
       background: var(--primary);
       color: #fff;
     }
@@ -172,15 +227,17 @@
       background: var(--surface);
       border: 1.5px solid var(--border);
       color: var(--primary);
-      padding: 10px 18px;
+      padding: 8px 14px;
       border-radius: 99px;
       font-weight: 700;
       font-size: 0.88rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.2s;
+      min-height: 42px;
+      white-space: nowrap;
     }
 
     .cart-nav-btn:hover {
@@ -191,53 +248,142 @@
     .cart-count {
       background: var(--accent);
       color: #fff;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 5px;
+      border-radius: 99px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* Hero Section */
+    .btn-header-wa {
+      background: #25d366;
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-header-wa:hover {
+      background: #1fa851;
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-nav-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      left: -290px;
+      width: 280px;
+      height: 100%;
+      background: var(--surface);
+      z-index: 1010;
+      box-shadow: 6px 0 25px rgba(0,0,0,0.15);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-nav-drawer.open {
+      left: 0;
+    }
+
+    .mobile-nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mobile-nav-links a {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+    }
+
+    /* ========================================================
+       HERO SECTION - CENTRADO Y FLUIDO EN MÓVIL
+       ======================================================== */
     .hero {
       position: relative;
-      padding: 85px 0 65px;
-      background: radial-gradient(circle at top right, #eef4f0 0%, var(--bg) 60%);
+      padding: 50px 0 40px;
+      background: radial-gradient(circle at center, #edf4ef 0%, var(--bg) 70%);
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
       align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       padding: 6px 14px;
       background: var(--accent-soft);
       color: var(--accent-hover);
-      border: 1px solid rgba(217, 154, 56, 0.3);
+      border: 1px solid rgba(217, 154, 56, 0.35);
       border-radius: 99px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      width: fit-content;
     }
 
     .hero-title {
       font-family: var(--font-heading);
-      font-size: 3.2rem;
+      font-size: 3rem;
       line-height: 1.15;
       color: var(--primary-dark);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      word-wrap: break-word;
     }
 
     .hero-title span {
@@ -246,37 +392,41 @@
     }
 
     .hero-description {
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
-      margin-bottom: 26px;
-      max-width: 580px;
+      margin-bottom: 22px;
+      max-width: 560px;
+      line-height: 1.55;
     }
 
     .shipping-alert {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #eef6f1;
-      border: 1px solid #cce3d4;
+      background: #eef7f1;
+      border: 1px solid #c8e4d3;
       color: var(--primary);
       padding: 10px 16px;
       border-radius: 10px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 600;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      width: fit-content;
+      line-height: 1.4;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 34px;
+      gap: 12px;
+      margin-bottom: 30px;
     }
 
     .hero-trust {
-      display: flex;
-      gap: 28px;
-      padding-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
     }
 
@@ -286,14 +436,21 @@
     }
 
     .trust-number {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--primary);
     }
 
     .trust-label {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    .hero-gallery {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     .hero-card-main {
@@ -301,6 +458,8 @@
       overflow: hidden;
       box-shadow: var(--shadow-lg);
       aspect-ratio: 4/5;
+      width: 100%;
+      max-width: 440px;
       position: relative;
     }
 
@@ -312,73 +471,78 @@
 
     .hero-floating-card {
       position: absolute;
-      bottom: -18px;
-      left: -18px;
-      background: var(--surface);
-      padding: 14px 18px;
-      border-radius: var(--radius);
+      bottom: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      border-radius: 12px;
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
     }
 
     .floating-icon {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--accent-soft);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      flex-shrink: 0;
     }
 
-    /* Section Styling */
+    /* ========================================================
+       SECCIONES
+       ======================================================== */
     section {
-      padding: 75px 0;
+      padding: 60px 0;
     }
 
     .section-header {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
+      max-width: 680px;
+      margin: 0 auto 36px;
     }
 
     .section-tag {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       color: var(--accent);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: block;
     }
 
     .section-title {
       font-family: var(--font-heading);
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: var(--primary-dark);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
+      line-height: 1.2;
     }
 
     .section-desc {
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 0.98rem;
     }
 
-    /* Controls */
+    /* Controls: Search + Swipeable Horizontal Pills */
     .catalog-controls {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      margin-bottom: 36px;
+      gap: 16px;
+      margin-bottom: 30px;
     }
 
     .catalog-search {
-      max-width: 500px;
+      max-width: 480px;
       width: 100%;
       margin: 0 auto;
       position: relative;
@@ -386,11 +550,11 @@
 
     .catalog-search input {
       width: 100%;
-      padding: 13px 20px 13px 44px;
+      padding: 12px 18px 12px 42px;
       border-radius: 99px;
       border: 1.5px solid var(--border);
       background: var(--surface);
-      font-size: 0.95rem;
+      font-size: 16px;
       outline: none;
       transition: border-color 0.2s;
     }
@@ -401,7 +565,7 @@
 
     .catalog-search svg {
       position: absolute;
-      left: 16px;
+      left: 15px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
@@ -410,20 +574,30 @@
     .category-pills {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 4px 10px;
+      scrollbar-width: none;
+    }
+
+    .category-pills::-webkit-scrollbar {
+      display: none;
     }
 
     .pill-btn {
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 99px;
       background: var(--surface);
       border: 1px solid var(--border);
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-height: 38px;
     }
 
     .pill-btn.active, .pill-btn:hover {
@@ -436,7 +610,7 @@
     .plant-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 28px;
+      gap: 24px;
     }
 
     .plant-card {
@@ -445,19 +619,19 @@
       overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
     }
 
     .plant-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
 
     .card-img-wrap {
       position: relative;
-      height: 240px;
+      height: 230px;
       background: #f0f0f0;
       overflow: hidden;
     }
@@ -466,23 +640,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .plant-card:hover .card-img-wrap img {
-      transform: scale(1.04);
+      transition: transform 0.4s ease;
     }
 
     .photo-indicator {
       position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: rgba(0, 0, 0, 0.6);
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.65);
       backdrop-filter: blur(4px);
       color: #fff;
       padding: 3px 8px;
       border-radius: 99px;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
       display: flex;
       align-items: center;
@@ -491,13 +661,13 @@
 
     .card-badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(255, 255, 255, 0.93);
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(4px);
       padding: 4px 10px;
       border-radius: 99px;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--primary);
       box-shadow: var(--shadow-sm);
@@ -505,58 +675,59 @@
 
     .card-price {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
+      bottom: 10px;
+      right: 10px;
       background: var(--primary-dark);
       color: #fff;
       padding: 5px 12px;
       border-radius: 99px;
       font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      font-size: 0.92rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .card-body {
-      padding: 20px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .card-scientific {
       font-style: italic;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       color: var(--accent-hover);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .card-desc {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       margin-bottom: 12px;
       flex-grow: 1;
+      line-height: 1.5;
     }
 
     .card-varieties-tag {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       background: var(--bg);
       border: 1px dashed var(--border);
       padding: 4px 8px;
       border-radius: 6px;
       color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: inline-block;
     }
 
     .card-shipping-tag {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: #3b6b4e;
       background: #f0f7f2;
       padding: 4px 8px;
@@ -575,16 +746,17 @@
       padding: 9px 12px;
       font-size: 0.82rem;
       border-radius: 8px;
+      min-height: 40px;
     }
 
     /* ========================================================
-       SECCIÓN: CREADOR DE ARREGLOS VIVOS Y JARDINERAS
+       TALLER DE ARREGLOS VIVOS
        ======================================================== */
     .arrangements-section {
       background: #f4f7f5;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 85px 0;
+      padding: 65px 0;
     }
 
     .builder-card {
@@ -598,52 +770,52 @@
     }
 
     .builder-main {
-      padding: 40px;
+      padding: 36px 30px;
     }
 
     .builder-sidebar {
       background: #142e20;
       color: #fff;
-      padding: 40px 32px;
+      padding: 36px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .builder-step-title {
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
     .step-number {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: var(--accent);
       color: #fff;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
-    /* Pot Selector Options */
     .pot-options-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 12px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
     }
 
     .pot-option {
       border: 2px solid var(--border);
       border-radius: 12px;
-      padding: 12px 10px;
+      padding: 10px 8px;
       text-align: center;
       cursor: pointer;
       transition: all 0.2s;
@@ -660,28 +832,27 @@
     }
 
     .pot-option-icon {
-      font-size: 1.8rem;
-      margin-bottom: 4px;
+      font-size: 1.6rem;
+      margin-bottom: 2px;
     }
 
     .pot-option-name {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--primary-dark);
     }
 
     .pot-option-price {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       color: var(--accent-hover);
       font-weight: 600;
     }
 
-    /* Plant Checkbox Grid */
     .mix-plant-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
     }
 
     .mix-plant-item {
@@ -710,30 +881,28 @@
 
     .mix-plant-thumb {
       width: 100%;
-      height: 75px;
+      height: 70px;
       border-radius: 6px;
       object-fit: cover;
       margin-bottom: 6px;
     }
 
     .mix-plant-name {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--text);
     }
 
     .mix-plant-price {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--accent-hover);
       font-weight: 700;
     }
 
-    /* Topping Finishes */
     .finish-options {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
     }
 
     .finish-pill {
@@ -741,10 +910,13 @@
       border-radius: 99px;
       border: 1px solid var(--border);
       background: #fff;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .finish-pill.selected {
@@ -753,56 +925,58 @@
       border-color: var(--primary);
     }
 
-    /* Live Summary Box */
     .summary-box {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 24px;
+      padding: 18px;
+      margin-bottom: 20px;
     }
 
     .summary-item {
       display: flex;
       justify-content: space-between;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       margin-bottom: 8px;
       color: #d1e2d7;
+      gap: 8px;
     }
 
     .summary-total {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 12px;
-      margin-top: 12px;
+      padding-top: 10px;
+      margin-top: 10px;
       display: flex;
       justify-content: space-between;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #fff;
     }
 
-    /* B2B Section */
+    /* ========================================================
+       B2B SECTION
+       ======================================================== */
     .b2b-section {
       background: #142e20;
       color: #fff;
-      border-radius: 24px;
-      padding: 65px 45px;
-      margin: 35px 0;
+      border-radius: 20px;
+      padding: 50px 36px;
+      margin: 20px 0;
       box-shadow: var(--shadow-lg);
     }
 
     .b2b-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 45px;
+      gap: 36px;
       align-items: center;
     }
 
     .b2b-content h2 {
       font-family: var(--font-heading);
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       line-height: 1.2;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       color: #fff;
     }
 
@@ -812,35 +986,35 @@
 
     .b2b-content p {
       color: #b9cfc1;
-      font-size: 1.02rem;
-      margin-bottom: 24px;
+      font-size: 0.96rem;
+      margin-bottom: 20px;
     }
 
     .b2b-benefits {
       list-style: none;
       display: grid;
-      gap: 12px;
-      margin-bottom: 30px;
+      gap: 10px;
+      margin-bottom: 24px;
     }
 
     .b2b-benefits li {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #e3ede6;
     }
 
     .check-icon {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       background: var(--accent);
       color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 900;
       flex-shrink: 0;
     }
@@ -848,21 +1022,21 @@
     .b2b-form-card {
       background: #ffffff;
       color: var(--text);
-      padding: 32px;
+      padding: 28px;
       border-radius: var(--radius);
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .b2b-form-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.22rem;
       color: var(--primary-dark);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .b2b-form-card p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .form-group {
@@ -871,36 +1045,36 @@
 
     .form-group label {
       display: block;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 5px;
       color: var(--primary-dark);
     }
 
-    .form-group select, .form-group input, .form-group textarea {
+    .form-group select, .form-group input {
       width: 100%;
       padding: 11px 13px;
       border-radius: 8px;
       border: 1px solid var(--border);
-      font-family: inherit;
-      font-size: 0.92rem;
+      font-size: 16px;
       outline: none;
+      background: #fff;
     }
 
-    .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+    .form-group select:focus, .form-group input:focus {
       border-color: var(--primary);
     }
 
-    /* Services */
+    /* Servicios */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
     }
 
     .service-card {
       background: var(--surface);
-      padding: 32px 26px;
+      padding: 26px 20px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
@@ -908,46 +1082,47 @@
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
 
     .service-icon {
-      width: 54px;
-      height: 54px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       background: var(--accent-soft);
       color: var(--accent-hover);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
     }
 
     .service-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .service-card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
-    /* Modal Ficha con Galería */
+    /* Modal Ficha Técnica */
     .modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.65);
       backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
     }
 
     .modal-content {
@@ -958,29 +1133,33 @@
       overflow: hidden;
       box-shadow: var(--shadow-lg);
       position: relative;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .modal-close {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(0,0,0,0.55);
+      top: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.6);
       color: #fff;
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       border: none;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       z-index: 10;
     }
 
     .modal-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      overflow-y: auto;
     }
 
     .modal-gallery-wrap {
@@ -990,7 +1169,7 @@
     }
 
     .modal-main-img-box {
-      height: 340px;
+      height: 320px;
       width: 100%;
       overflow: hidden;
       display: flex;
@@ -1011,17 +1190,19 @@
       padding: 10px;
       background: #222;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal-thumb {
-      width: 55px;
-      height: 55px;
+      width: 52px;
+      height: 52px;
       border-radius: 6px;
       object-fit: cover;
       cursor: pointer;
       opacity: 0.6;
       border: 2px solid transparent;
       transition: all 0.2s;
+      flex-shrink: 0;
     }
 
     .modal-thumb.active, .modal-thumb:hover {
@@ -1030,15 +1211,14 @@
     }
 
     .modal-body {
-      padding: 28px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow-y: auto;
-      max-height: 480px;
     }
 
-    /* SIDEBAR / CART DRAWER */
+    /* Cart Drawer */
     .cart-drawer-overlay {
       position: fixed;
       inset: 0;
@@ -1061,7 +1241,7 @@
       box-shadow: -10px 0 30px rgba(0,0,0,0.15);
       display: flex;
       flex-direction: column;
-      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .cart-drawer.open {
@@ -1069,71 +1249,78 @@
     }
 
     .cart-header {
-      padding: 20px 24px;
+      padding: 16px 20px;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: #fafaf8;
+      min-height: 60px;
     }
 
     .cart-header h3 {
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       color: var(--primary-dark);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .cart-close-btn {
       background: transparent;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       cursor: pointer;
       color: var(--text-muted);
       line-height: 1;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .cart-items {
       flex: 1;
       overflow-y: auto;
-      padding: 20px 24px;
+      padding: 16px 20px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
+      -webkit-overflow-scrolling: touch;
     }
 
     .cart-empty-msg {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 16px;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     .cart-item {
       display: grid;
-      grid-template-columns: 60px 1fr auto;
-      gap: 12px;
+      grid-template-columns: 56px 1fr auto;
+      gap: 10px;
       align-items: center;
-      padding-bottom: 14px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
 
     .cart-item-img {
-      width: 60px;
-      height: 60px;
+      width: 56px;
+      height: 56px;
       border-radius: 8px;
       object-fit: cover;
     }
 
     .cart-item-info h4 {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       color: var(--primary-dark);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .cart-item-price {
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       color: var(--accent-hover);
       font-weight: 700;
     }
@@ -1146,8 +1333,8 @@
     }
 
     .qty-btn {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       border-radius: 4px;
       border: 1px solid var(--border);
       background: var(--bg);
@@ -1156,7 +1343,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     .qty-btn:hover {
@@ -1168,12 +1355,12 @@
       border: none;
       color: #e04b4b;
       cursor: pointer;
-      font-size: 1rem;
-      padding: 4px;
+      font-size: 1.1rem;
+      padding: 6px;
     }
 
     .cart-footer {
-      padding: 20px 24px;
+      padding: 16px 20px env(safe-area-inset-bottom, 20px);
       border-top: 1px solid var(--border);
       background: #fafaf8;
     }
@@ -1182,10 +1369,10 @@
       background: #eef6f1;
       border: 1px solid #c7e5d2;
       border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 0.8rem;
+      padding: 9px 12px;
+      font-size: 0.78rem;
       color: #215c38;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: flex-start;
       gap: 8px;
@@ -1194,19 +1381,19 @@
     .cart-summary-row {
       display: flex;
       justify-content: space-between;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     /* Floating WhatsApp Button */
     .whatsapp-float {
       position: fixed;
-      bottom: 26px;
-      right: 26px;
-      width: 60px;
-      height: 60px;
+      bottom: max(20px, env(safe-area-inset-bottom, 20px));
+      right: 20px;
+      width: 56px;
+      height: 56px;
       background: #25d366;
       color: #fff;
       border-radius: 50%;
@@ -1215,10 +1402,10 @@
       justify-content: center;
       box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
       z-index: 999;
-      transition: all 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
-    .whatsapp-float:hover {
+    .whatsapp-float:hover, .whatsapp-float:active {
       transform: scale(1.08);
     }
 
@@ -1243,32 +1430,32 @@
     footer {
       background: var(--primary-dark);
       color: #fff;
-      padding: 55px 0 30px;
+      padding: 45px 0 25px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 35px;
+      gap: 32px;
+      margin-bottom: 30px;
     }
 
     .footer-brand h4 {
       font-family: var(--font-heading);
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       color: var(--accent);
     }
 
     .footer-brand p {
       color: #a4b8ab;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       max-width: 360px;
     }
 
     .footer-col h5 {
-      font-size: 1.05rem;
-      margin-bottom: 14px;
+      font-size: 1rem;
+      margin-bottom: 12px;
       color: #fff;
     }
 
@@ -1276,12 +1463,12 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 8px;
     }
 
     .footer-col a {
       color: #a4b8ab;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       transition: color 0.2s;
     }
 
@@ -1291,85 +1478,197 @@
 
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 22px;
+      padding-top: 18px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: #7b9483;
     }
 
-    @media (max-width: 900px) {
+    /* ========================================================
+       MEDIA QUERIES - MÓVIL EXACTO Y CORREGIDO
+       ======================================================== */
+    @media (max-width: 820px) {
+      :root {
+        --header-height: 60px;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .hamburger-btn {
+        display: flex !important;
+      }
+
+      .btn-header-wa span {
+        display: none;
+      }
+
+      .btn-header-wa {
+        padding: 8px 10px;
+        min-height: 38px;
+      }
+
+      .cart-nav-btn {
+        padding: 6px 12px;
+        min-height: 38px;
+      }
+
       .hero-grid, .b2b-grid, .footer-grid, .builder-card {
         grid-template-columns: 1fr;
-        gap: 36px;
       }
+
+      .hero-text {
+        text-align: center;
+        align-items: center;
+      }
+
       .hero-title {
-        font-size: 2.4rem;
+        font-size: 2.1rem;
+        text-align: center;
       }
+
+      .hero-description {
+        text-align: center;
+      }
+
+      .shipping-alert {
+        margin: 0 auto 20px auto;
+        text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
       .hero-gallery {
         order: -1;
+        margin-bottom: 10px;
       }
+
+      .hero-card-main {
+        aspect-ratio: 16/11;
+        max-width: 320px;
+      }
+
+      .cart-drawer {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .plant-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-img-wrap {
+        height: 210px;
+      }
+
+      .modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+
+      .modal-content {
+        border-radius: 20px 20px 0 0;
+        max-height: 85vh;
+      }
+
       .modal-grid {
         grid-template-columns: 1fr;
       }
+
       .modal-main-img-box {
-        height: 240px;
+        height: 220px;
       }
-      .nav-links {
-        display: none;
+
+      .modal-body {
+        padding: 20px;
       }
-      .cart-drawer {
-        max-width: 100%;
+
+      .pot-options-grid, .mix-plant-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+  <!-- Header Dinámico con Ocultamiento al Bajar -->
+  <header id="mainHeader">
     <div class="container nav-wrapper">
-      <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Leche & Honey Logo">
-        <span>Leche & Honey</span>
-      </a>
+      <div class="brand-group">
+        <button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Abrir Menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <a href="#" class="brand">
+          <img src="assets/logo.png" alt="Leche & Honey">
+          <span>Leche & Honey</span>
+        </a>
+      </div>
 
       <ul class="nav-links">
         <li><a href="#catalogo">Catálogo de Plantas</a></li>
-        <li><a href="#arreglos">Arreglos Vivos Personalizados</a></li>
+        <li><a href="#arreglos">Arreglos Vivos</a></li>
         <li><a href="#b2b">Suministro B2B / Lotes</a></li>
-        <li><a href="#servicios">Servicios & Paisajismo</a></li>
+        <li><a href="#servicios">Servicios</a></li>
       </ul>
 
       <div class="header-actions">
-        <button class="cart-nav-btn" onclick="toggleCart()" title="Ver carrito de compras">
-          🛒 Pedido <span class="cart-count" id="cartCountBadge">0</span>
+        <button class="cart-nav-btn" onclick="toggleCart()" title="Ver carrito">
+          🛒 <span class="cart-count" id="cartCountBadge">0</span>
         </button>
-        <a href="https://wa.me/50768118430?text=Hola%20Leche%20%26%20Honey,%20deseo%20hacer%20una%20consulta%20sobre%20plantas." target="_blank" class="btn btn-accent">
-          💬 Pedir Asesoría
+        <a href="https://wa.me/50768118430?text=Hola%20Leche%20%26%20Honey,%20deseo%20hacer%20una%20consulta%20sobre%20plantas." target="_blank" class="btn-header-wa">
+          💬 <span>Asesoría</span>
         </a>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+  <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-top">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo">
+        <span>Leche & Honey</span>
+      </div>
+      <button onclick="toggleMobileNav()" style="background: transparent; border: none; font-size: 1.6rem; color: var(--text-muted); cursor: pointer; padding: 4px;">×</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#catalogo" onclick="toggleMobileNav()">🌱 Catálogo de Plantas</a></li>
+      <li><a href="#arreglos" onclick="toggleMobileNav()">🪴 Arreglos Vivos a Medida</a></li>
+      <li><a href="#b2b" onclick="toggleMobileNav()">🏢 Suministro B2B / Lotes</a></li>
+      <li><a href="#servicios" onclick="toggleMobileNav()">🚚 Servicios & Paisajismo</a></li>
+      <li><a href="javascript:void(0)" onclick="toggleMobileNav(); toggleCart();">🛒 Ver Mi Pedido</a></li>
+    </ul>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
-        <div class="hero-badge">🌿 Vivero Botánico & Paisajismo en Panamá</div>
+        <div class="hero-badge">🌿 Vivero Botánico en Panamá</div>
         <h1 class="hero-title">
           Plantas Tropicales de Alta Calidad & <span>Paisajismo de Autor</span>
         </h1>
         <p class="hero-description">
-          Suministro directo de vivero para hogares, oficinas y proyectos corporativos. Especies 100% aclimatadas al clima de Panamá, disponibles al detal, en lotes mayoristas o en arreglos vivos combinados.
+          Suministro directo de vivero para hogares, oficinas y proyectos corporativos. Especies 100% aclimatadas al clima de Panamá, al detal, en lotes mayoristas o en arreglos vivos combinados.
         </p>
 
         <div class="shipping-alert">
-          🚚 <span><strong>Envíos a domicilio:</strong> El costo de envío se cotiza según tu dirección exacta y volumen del pedido.</span>
+          🚚 <div><strong>Envíos a domicilio:</strong> El costo de flete se cotiza según tu dirección exacta y volumen del pedido.</div>
         </div>
 
         <div class="hero-actions">
           <a href="#catalogo" class="btn btn-primary">
-            🌱 Explorar Catálogo y Precios
+            🌱 Explorar Catálogo
           </a>
           <a href="#arreglos" class="btn btn-outline">
             🪴 Armar Arreglo Vivo
@@ -1383,11 +1682,11 @@
           </div>
           <div class="trust-item">
             <span class="trust-number">Directo</span>
-            <span class="trust-label">Precio de Productor</span>
+            <span class="trust-label">Precio Productor</span>
           </div>
           <div class="trust-item">
             <span class="trust-number">Cobertura</span>
-            <span class="trust-label">Panamá Oeste, Ciudad & Colón</span>
+            <span class="trust-label">Oeste, Ciudad & Colón</span>
           </div>
         </div>
       </div>
@@ -1395,12 +1694,12 @@
       <div class="hero-gallery">
         <div class="hero-card-main">
           <img src="assets/areca.jpg" alt="Palma Areca Leche & Honey">
-        </div>
-        <div class="hero-floating-card">
-          <div class="floating-icon">🌴</div>
-          <div>
-            <h4 style="font-size: 0.95rem; font-weight: 700;">Palma Areca en Lotes</h4>
-            <p style="font-size: 0.8rem; color: var(--text-muted);">Especial para áreas comunes y PH</p>
+          <div class="hero-floating-card">
+            <div class="floating-icon">🌴</div>
+            <div>
+              <h4 style="font-size: 0.88rem; font-weight: 700;">Palma Areca en Lotes</h4>
+              <p style="font-size: 0.75rem; color: var(--text-muted);">Para áreas comunes y PH</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1420,7 +1719,7 @@
       <div class="catalog-controls">
         <div class="catalog-search">
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          <input type="text" id="searchInput" placeholder="Buscar por nombre común o científico (ej. Sansevieria, Diefenbachia, Areca, Magueyito)...">
+          <input type="text" id="searchInput" placeholder="Buscar planta (ej. Sansevieria, Areca, Magueyito)..." autocomplete="off">
         </div>
 
         <div class="category-pills">
@@ -1447,7 +1746,7 @@
       <div class="section-header">
         <span class="section-tag">Diseño Botánico a Medida</span>
         <h2 class="section-title">Crea tu Arreglo Vivo Personalizado</h2>
-        <p class="section-desc">¿Quieres una maceta o jardinera combinada (por ejemplo: Magueyito + Azalea + Pothos)? Elige tu contenedor, tus plantas y te lo entregamos listo y sembrado.</p>
+        <p class="section-desc">Combina tus especies favoritas en una sola maceta (por ejemplo: Magueyito + Azalea + Pothos). Te lo entregamos listo y sembrado.</p>
       </div>
 
       <div class="builder-card">
@@ -1465,12 +1764,12 @@
             </div>
             <div class="pot-option" data-id="jardinera" data-name="Jardinera Rectangular (Balcón)" data-price="22">
               <div class="pot-option-icon">🪴</div>
-              <div class="pot-option-name">Jardinera Terraza</div>
+              <div class="pot-option-name">Jardinera Balcón</div>
               <div class="pot-option-price">+$22.00</div>
             </div>
             <div class="pot-option" data-id="barro" data-name="Macetero Barro Artesanal" data-price="9">
               <div class="pot-option-icon">🥣</div>
-              <div class="pot-option-name">Barro Tradicional</div>
+              <div class="pot-option-name">Barro Rústico</div>
               <div class="pot-option-price">+$9.00</div>
             </div>
             <div class="pot-option" data-id="colgante" data-name="Canasta / Colgante de Fibras" data-price="8">
@@ -1498,7 +1797,7 @@
             <span class="step-number">3</span> Cobertura Decorativa:
           </div>
           <div class="finish-options" id="finishOptionsContainer">
-            <div class="finish-pill selected" data-name="Piedras Blancas de Río">🪨 Piedras de Río Blancas</div>
+            <div class="finish-pill selected" data-name="Piedras Blancas de Río">🪨 Piedras de Río</div>
             <div class="finish-pill" data-name="Corteza de Pino Orgánica">🌲 Corteza de Pino</div>
             <div class="finish-pill" data-name="Musgo Verde Vivo">🌿 Musgo Verde</div>
             <div class="finish-pill" data-name="Tierra Natural sin Cobertura">🪵 Tierra Natural</div>
@@ -1508,8 +1807,8 @@
         <!-- Sidebar Summary -->
         <div class="builder-sidebar">
           <div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 6px; color: #fff;">🪴 Tu Arreglo Vivo</h3>
-            <p style="font-size: 0.85rem; color: #b7cfbe; margin-bottom: 20px;">Diseñado a tu gusto, sembrado con sustrato nutritivo listo para lucir.</p>
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px; color: #fff;">🪴 Tu Arreglo Vivo</h3>
+            <p style="font-size: 0.84rem; color: #b7cfbe; margin-bottom: 18px;">Sembrado con sustrato nutritivo y abono orgánico listo para lucir.</p>
 
             <div class="summary-box">
               <div class="summary-item">
@@ -1518,11 +1817,11 @@
               </div>
               <div class="summary-item">
                 <span>Plantas (<span id="summaryCount">0</span>):</span>
-                <span id="summaryPlantsList" style="text-align: right; font-size: 0.82rem; max-width: 170px;">Ninguna seleccionada</span>
+                <span id="summaryPlantsList" style="text-align: right; font-size: 0.8rem; max-width: 160px;">Ninguna</span>
               </div>
               <div class="summary-item">
                 <span>Cobertura:</span>
-                <strong id="summaryFinish">Piedras de Río Blancas</strong>
+                <strong id="summaryFinish">Piedras Blancas</strong>
               </div>
               <div class="summary-total">
                 <span>Total Estimado:</span>
@@ -1530,13 +1829,13 @@
               </div>
             </div>
 
-            <div style="font-size: 0.78rem; color: #9ebd9c; margin-bottom: 20px;">
-              🚚 <em>El costo de flete se cotiza según tu dirección exacta en Panamá.</em>
+            <div style="font-size: 0.78rem; color: #9ebd9c; margin-bottom: 18px;">
+              🚚 <em>Flete cotizado según tu dirección en Panamá.</em>
             </div>
           </div>
 
           <button class="btn btn-accent" style="width: 100%; font-size: 0.95rem; padding: 14px;" onclick="cotizarArregloWhatsApp()">
-            📲 Cotizar Este Arreglo por WhatsApp
+            📲 Cotizar Arreglo por WhatsApp
           </button>
         </div>
       </div>
@@ -1548,7 +1847,7 @@
     <div class="b2b-section">
       <div class="b2b-grid">
         <div class="b2b-content">
-          <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">División Corporativa & Proyectos</span>
+          <span style="color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 1px;">División Corporativa & Proyectos</span>
           <h2>Proveedores al por mayor para <span>Paisajismo & Inmobiliarias</span></h2>
           <p>
             Atendemos directamente a promotoras residenciales, cadenas hoteleras, administradores de PH y despachos de arquitectura en Panamá Oeste, Ciudad de Panamá y Colón.
@@ -1557,18 +1856,17 @@
           <ul class="b2b-benefits">
             <li><span class="check-icon">✓</span> Suministro por lote de Palma Areca, Sansevieria y Dieffenbachia.</li>
             <li><span class="check-icon">✓</span> Aclimatación local garantizada con tasa de merma mínima.</li>
-            <li><span class="check-icon">✓</span> Opciones con macetería de concreto, fibra o barro a medida.</li>
+            <li><span class="check-icon">✓</span> Opciones con macetería a medida y sustratos especiales.</li>
             <li><span class="check-icon">✓</span> Planes de reposición periódica y mantenimiento fitosanitario.</li>
           </ul>
 
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <a href="https://wa.me/50768118430?text=Hola,%20solicito%20cotización%20B2B%20por%20lote%20para%20un%20proyecto." target="_blank" class="btn btn-accent">
               📋 Cotizar Proyecto Inmobiliario
             </a>
           </div>
         </div>
 
-        <!-- Calculator Card -->
         <div class="b2b-form-card">
           <h3>Calculadora Rápida de Lotes</h3>
           <p>Estima tu requerimiento para proyectos comerciales:</p>
@@ -1603,8 +1901,8 @@
             </select>
           </div>
 
-          <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="enviarCotizacionB2B()">
-            📲 Solicitar Cotización Formal por WhatsApp
+          <button class="btn btn-primary" style="width: 100%; margin-top: 8px;" onclick="enviarCotizacionB2B()">
+            📲 Solicitar Cotización B2B por WhatsApp
           </button>
         </div>
       </div>
@@ -1651,7 +1949,7 @@
   <!-- Modal Ficha Técnica con Galería Multivariedad -->
   <div class="modal-overlay" id="plantModal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">×</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar Ficha">×</button>
       <div class="modal-grid">
         <div class="modal-gallery-wrap">
           <div class="modal-main-img-box">
@@ -1665,27 +1963,27 @@
         <div class="modal-body">
           <div>
             <span id="modalCategory" style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--accent);"></span>
-            <h3 id="modalTitle" style="font-size: 1.4rem; margin: 4px 0; color: var(--primary-dark);"></h3>
-            <p id="modalScientific" style="font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.88rem;"></p>
+            <h3 id="modalTitle" style="font-size: 1.35rem; margin: 4px 0; color: var(--primary-dark);"></h3>
+            <p id="modalScientific" style="font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.86rem;"></p>
             
-            <div id="modalVarietiesBox" style="background: #fbfbf9; border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; font-size: 0.82rem; color: var(--primary);">
+            <div id="modalVarietiesBox" style="background: #fbfbf9; border-left: 3px solid var(--accent); padding: 8px 12px; margin-bottom: 12px; font-size: 0.8rem; color: var(--primary);">
               <!-- Varieties detail -->
             </div>
 
-            <p id="modalDesc" style="font-size: 0.88rem; color: var(--text); line-height: 1.55; margin-bottom: 14px;"></p>
+            <p id="modalDesc" style="font-size: 0.86rem; color: var(--text); line-height: 1.5; margin-bottom: 12px;"></p>
             
-            <div style="background: var(--bg); padding: 12px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 14px;">
+            <div style="background: var(--bg); padding: 10px 12px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 12px;">
               <strong>Guía de cuidados:</strong>
-              <div id="modalCare" style="color: var(--text-muted); margin-top: 4px;"></div>
+              <div id="modalCare" style="color: var(--text-muted); margin-top: 3px;"></div>
             </div>
             
-            <div style="font-size: 0.8rem; color: #2e6344; background: #eef7f1; padding: 6px 10px; border-radius: 6px; margin-bottom: 14px;">
+            <div style="font-size: 0.78rem; color: #2e6344; background: #eef7f1; padding: 6px 10px; border-radius: 6px; margin-bottom: 12px;">
               🚚 Costo de envío según dirección y distancia.
             </div>
           </div>
 
           <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-            <div id="modalPrice" style="font-size: 1.35rem; font-weight: 700; color: var(--primary);"></div>
+            <div id="modalPrice" style="font-size: 1.3rem; font-weight: 700; color: var(--primary);"></div>
             <button id="modalAddCartBtn" class="btn btn-accent" style="padding: 10px 16px;">
               🛒 Añadir al Pedido
             </button>
@@ -1715,12 +2013,12 @@
 
       <div class="form-group" style="margin-bottom: 10px;">
         <label for="customerName" style="font-size: 0.8rem;">Tu Nombre:</label>
-        <input type="text" id="customerName" placeholder="Ej. Ana Morales" style="padding: 8px 10px; font-size: 0.88rem;">
+        <input type="text" id="customerName" placeholder="Ej. Ana Morales" style="padding: 10px 12px;">
       </div>
 
       <div class="form-group" style="margin-bottom: 12px;">
         <label for="customerAddress" style="font-size: 0.8rem;">Dirección o Zona de Entrega:</label>
-        <input type="text" id="customerAddress" placeholder="Ej. Costa Verde, La Chorrera o San Francisco" style="padding: 8px 10px; font-size: 0.88rem;">
+        <input type="text" id="customerAddress" placeholder="Ej. Costa Verde, La Chorrera o San Francisco" style="padding: 10px 12px;">
       </div>
 
       <div class="cart-summary-row">
@@ -1737,19 +2035,19 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/50768118430?text=Hola%20Leche%20%26%20Honey,%20tengo%20una%20consulta." target="_blank" class="whatsapp-float" title="Contactar Asesor">
     <span class="whatsapp-badge">1</span>
-    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.18-.544-1.782-.738-2.922-2.55-3.011-2.668-.088-.119-.724-.962-.724-1.834 0-.872.457-1.302.62-1.479.163-.177.355-.221.474-.221.119 0 .237.001.341.006.11.005.258-.042.403.308.148.358.508 1.238.552 1.328.044.09.074.195.015.313-.059.12-.089.195-.178.299-.089.105-.187.234-.267.314-.089.09-.182.188-.078.367.104.179.462.763.992 1.234.683.608 1.258.796 1.437.886.179.089.283.075.388-.045.104-.119.444-.518.563-.697.119-.179.237-.149.399-.089.162.06 1.031.486 1.208.575.177.089.296.134.34.208.044.075.044.433-.1 1.038z"/></svg>
+    <svg width="30" height="30" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.072-2.18-.544-1.782-.738-2.922-2.55-3.011-2.668-.088-.119-.724-.962-.724-1.834 0-.872.457-1.302.62-1.479.163-.177.355-.221.474-.221.119 0 .237.001.341.006.11.005.258-.042.403.308.148.358.508 1.238.552 1.328.044.09.074.195.015.313-.059.12-.089.195-.178.299-.089.105-.187.234-.267.314-.089.09-.182.188-.078.367.104.179.462.763.992 1.234.683.608 1.258.796 1.437.886.179.089.283.075.388-.045.104-.119.444-.518.563-.697.119-.179.237-.149.399-.089.162.06 1.031.486 1.208.575.177.089.296.134.34.208.044.075.044.433-.1 1.038z"/></svg>
   </a>
 
   <!-- Footer -->
   <footer>
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-          <img src="assets/logo.png" alt="Leche & Honey" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <img src="assets/logo.png" alt="Leche & Honey" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--accent);">
           <h4 style="margin: 0;">Leche & Honey</h4>
         </div>
         <p>Vivero tropical, plantas ornamentales de bajo mantenimiento y soluciones paisajísticas integrales en Panamá.</p>
-        <p style="margin-top: 12px; color: var(--accent);">📍 Cultivo local en Panamá</p>
+        <p style="margin-top: 10px; color: var(--accent); font-size: 0.85rem;">📍 Cultivo local en Panamá</p>
       </div>
 
       <div class="footer-col">
@@ -1783,6 +2081,41 @@
   <script>
     const PHONE_NUMBER = "50768118430";
 
+    // 1. SMART HIDING HEADER ON SCROLL
+    const headerEl = document.getElementById('mainHeader');
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollThreshold = 30;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollY <= scrollThreshold) {
+        headerEl.classList.remove('header-hidden');
+        headerEl.classList.remove('header-scrolled');
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      headerEl.classList.add('header-scrolled');
+
+      if (currentScrollY > lastScrollY && currentScrollY > 60) {
+        headerEl.classList.add('header-hidden');
+      } else if (currentScrollY < lastScrollY) {
+        headerEl.classList.remove('header-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+
+    // 2. MOBILE DRAWER NAVIGATION
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const overlay = document.getElementById('mobileNavOverlay');
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+
+    // 3. PLANTS DATA
     const plantsData = [
       {
         id: "sansevieria",
@@ -1792,7 +2125,7 @@
         categoryName: "Arquitectónica & Resistente",
         price: 4,
         images: ["assets/sansevieria.jpg", "assets/sansevieria_2.jpg", "assets/sansevieria_3.jpg"],
-        varieties: "Variedades disponibles: Laurentii (con borde amarillo dorado), Zeylanica (franjas verde plata) y variedad enana/nido.",
+        varieties: "Variedades: Laurentii (borde amarillo dorado), Zeylanica (verde plata) y enana tipo nido.",
         light: "Sombra a Pleno Sol",
         water: "Riego espaciado cada 10-15 días",
         desc: "Prácticamente indestructible y gran purificadora de aire. De porte vertical escultórico, disponible en varias alturas y matices.",
@@ -1806,7 +2139,7 @@
         categoryName: "Interior & Sombra",
         price: 5,
         images: ["assets/difenbachia.jpg", "assets/difenbachia_2.jpg", "assets/difenbachia_3.jpg"],
-        varieties: "Variedades disponibles: D. Amoena (Millonaria tradicional de hojas anchas) y D. Seguine (variegación moteada compacta).",
+        varieties: "Variedades: D. Amoena (Millonaria de hojas anchas) y D. Seguine (variegación moteada compacta).",
         light: "Sombra / Luz filtrada",
         water: "1-2 veces por semana",
         desc: "Follaje variegado exuberante en verde y marfil. Disponible en plantas individuales en bolsa o ejemplares tupidos de varios tallos.",
@@ -1820,7 +2153,7 @@
         categoryName: "Palma de Gran Porte",
         price: 7,
         images: ["assets/areca.jpg", "assets/areca_2.jpg", "assets/areca_3.jpg"],
-        varieties: "Formatos disponibles: Planta suelta individual o ejemplares en isla / grupo tupido para cerramiento.",
+        varieties: "Formatos: Planta suelta individual o ejemplares en isla / grupo tupido para cerramiento.",
         light: "Semisombra / Luz brillante",
         water: "Riego moderado 2-3 veces/semana",
         desc: "Palma tropical clásica y elegante. Excelente para delimitar espacios, terrazas, lobbies y jardines residenciales.",
@@ -1982,9 +2315,7 @@
       }
     ];
 
-    // ==========================================================
-    // RENDER CATALOG
-    // ==========================================================
+    // 4. RENDER CATALOG
     const plantGrid = document.getElementById('plantGrid');
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.pill-btn');
@@ -2003,8 +2334,8 @@
 
       if (filtered.length === 0) {
         plantGrid.innerHTML = `
-          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
-            <p style="font-size: 1.2rem; color: var(--text-muted);">No encontramos plantas que coincidan con tu búsqueda.</p>
+          <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px;">
+            <p style="font-size: 1.1rem; color: var(--text-muted);">No encontramos plantas que coincidan con tu búsqueda.</p>
           </div>
         `;
         return;
@@ -2047,9 +2378,7 @@
       renderPlants();
     });
 
-    // ==========================================================
-    // MODAL CON GALERÍA Y VARIEDADES
-    // ==========================================================
+    // 5. MODAL CON GALERÍA Y VARIEDADES
     const modal = document.getElementById('plantModal');
     const modalMainImg = document.getElementById('modalMainImg');
     const modalThumbsRow = document.getElementById('modalThumbsRow');
@@ -2075,7 +2404,6 @@
       modalCare.innerHTML = `☀️ <strong>Luz:</strong> ${plant.light}<br>💧 <strong>Riego:</strong> ${plant.water}<br>🌱 <strong>Cuidado:</strong> ${plant.care}`;
       modalPrice.textContent = `$${plant.price} USD`;
 
-      // Render thumbs
       modalThumbsRow.innerHTML = plant.images.map((img, idx) => `
         <img src="${img}" class="modal-thumb ${idx === 0 ? 'active' : ''}" onclick="selectModalThumb('${img}', this)" alt="Miniatura">
       `).join('');
@@ -2102,9 +2430,7 @@
       if (e.target === modal) closeModal();
     });
 
-    // ==========================================================
-    // CREADOR DE ARREGLOS VIVOS (BUILDER)
-    // ==========================================================
+    // 6. BUILDER ARREGLOS VIVOS
     let builderState = {
       pot: { id: "cemento", name: "Maceta Cemento Blanco/Gris", price: 14 },
       plants: [],
@@ -2123,7 +2449,6 @@
     ];
 
     function initBuilder() {
-      // 1. Pot selectors
       const potOptions = document.querySelectorAll('.pot-option');
       potOptions.forEach(pot => {
         pot.addEventListener('click', () => {
@@ -2138,7 +2463,6 @@
         });
       });
 
-      // 2. Mix plant pool checkboxes
       const mixGrid = document.getElementById('mixPlantGrid');
       mixGrid.innerHTML = mixPlantPool.map(p => `
         <div class="mix-plant-item" id="mix_item_${p.id}" onclick="toggleMixPlant('${p.id}')">
@@ -2148,12 +2472,10 @@
         </div>
       `).join('');
 
-      // Pre-select Magueyito, Azalea, Pothos as default arrangement suggestion!
       toggleMixPlant('magueyito');
       toggleMixPlant('azalea');
       toggleMixPlant('golden_pothos');
 
-      // 3. Finishes
       const finishPills = document.querySelectorAll('.finish-pill');
       finishPills.forEach(pill => {
         pill.addEventListener('click', () => {
@@ -2193,7 +2515,7 @@
 
       const listEl = document.getElementById('summaryPlantsList');
       if (builderState.plants.length === 0) {
-        listEl.textContent = "Ninguna seleccionada";
+        listEl.textContent = "Ninguna";
       } else {
         listEl.textContent = builderState.plants.map(p => p.name).join(', ');
       }
@@ -2225,9 +2547,7 @@
       window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
     }
 
-    // ==========================================================
-    // CARRITO DE COMPRAS & PEDIDOS
-    // ==========================================================
+    // 7. CARRITO DE PEDIDOS
     let cart = [];
 
     function addToCart(plantId) {
